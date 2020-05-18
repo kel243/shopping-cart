@@ -484,7 +484,8 @@ body {
 
   &-phone,
   &-grubhub,
-  &-postmate {
+  &-postmate,
+  &-uber {
     width: 20rem;
     margin-bottom: 2rem;
   }
@@ -1192,4 +1193,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+#uber {
+  &-mobile {
+    display: none;
+    @media only screen and (max-width: 960px) {
+      display: inline;
+    }
+  }
+
+  &-desktop {
+    @media only screen and (max-width: 960px) {
+      display: none;
+    }
+  }
 }

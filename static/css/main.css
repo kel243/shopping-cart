@@ -586,7 +586,7 @@ body {
   background-color: #fafafa;
 }
 
-.order-phone, .order-grubhub, .order-postmate {
+.order-phone, .order-grubhub, .order-postmate, .order-uber {
   width: 20rem;
   margin-bottom: 2rem;
 }
@@ -1406,5 +1406,21 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+#uber-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  #uber-mobile {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #uber-desktop {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */
