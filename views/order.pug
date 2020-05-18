@@ -1,0 +1,516 @@
+doctype html
+html(lang='en')
+  head
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-162157542-2')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+      dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-162157542-2");
+    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='Content-Security-Policy', content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com/v3/")
+    meta(name='description', content='Online ordering for Szechuan Express in Pittsburgh.')
+    link(rel='canonical', href='https://szechuanexpresspgh.com/')
+    link(rel='stylesheet', type='text/css', href='/css/main.min.css')
+    script(src='https://js.stripe.com/v3/')
+    link(href='https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css2?family=Gotu&display=swap', rel='stylesheet')
+    link(href='https://unpkg.com/aos@2.3.1/dist/aos.css', rel='stylesheet')
+    link(rel='icon', type='image/png', href='/img/logo.png')
+    title Szechuan Express
+  body(ontouchstart='')
+    nav.navOrder
+        a.navOrder-link(href='/') Home
+        .checkOut
+            button.navOrder-cart#sc
+                svg.shoppingCart#sc(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24')
+                    path#sc(d='M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z')
+            button.navOrder-checkout#pay Checkout
+    .menus-tabs
+        input#ham-toggle.ham__checkbox(type='checkbox')
+        label.ham__button(for='ham-toggle')
+            span.ham__icon  
+        .ham__background  
+        nav.ham__nav
+            a.ham__nav__link(href='#soups') Soups
+            a.ham__nav__link(href='#appetizers') Appetizers
+            a.ham__nav__link(href='#vegetables') Vegetables
+            a.ham__nav__link(href='#pork') Pork
+            a.ham__nav__link(href='#chicken') Chicken
+            a.ham__nav__link(href='#beef') Beef
+            a.ham__nav__link(href='#seafood') Seafood
+            a.ham__nav__link(href='#friedRice') Fried Rice
+            a.ham__nav__link(href='#friedNoodle') Asian Pan Fried Noodles
+            a.ham__nav__link(href='#soupNoodle') Soup Noodles
+            a.ham__nav__link(href='#loMein') Lo Mein
+            a.ham__nav__link(href='#padThai') Pad Thai
+            a.ham__nav__link(href='#singapore') Singapore Chow Mein Fun
+            a.ham__nav__link(href='#maiFun') Taiwan Chow Mai Fun
+            a.ham__nav__link(href='#chowFun') Chow Fun Noodles
+            a.ham__nav__link(href='#chefSpecial') Chef's Special
+        button.menu-tab#regular Regular Menu
+        button.menu-tab#special Special Menu
+    .orderMenus#menu-special
+        .specialContainer
+            .mainContainer-special
+                p.itemInfo.itemInfo-boxed
+                    | This order method is for PICK-UP ONLY. <br/>
+                    | Order with Grubhub or Postmate for delivery. <br/>
+                    | Orders made outside of operating hours will be ignored and refunded as soon as possible. 
+                h2.itemHeader
+                        | Specials 
+                p.itemInfo.itemInfo-spicy
+                        | Red Items Are Spicy!
+                .itemsContainer
+                        each item in menu.specialMenu
+                            .itemBox(id=`s${item.id}`)
+                                if item.spicy
+                                    p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                else
+                                    p.itemName= `${item.id}. ${item.name}`
+                                each price in item.prices
+                                    p.itemPrice= price
+    
+    
+    .ham__nav
+        .categoryLinks
+            a.categoryLinks-link(href='#soups') Soups
+            a.categoryLinks-link(href='#appetizers') Appetizers
+            a.categoryLinks-link(href='#vegetables') Vegetables
+            a.categoryLinks-link(href='#pork') Pork
+            a.categoryLinks-link(href='#chicken') Chicken
+            a.categoryLinks-link(href='#beef') Beef
+            a.categoryLinks-link(href='#seafood') Seafood
+            a.categoryLinks-link(href='#friedRice') Fried Rice
+            a.categoryLinks-link(href='#friedNoodle') Asian Pan Fried Noodles
+            a.categoryLinks-link(href='#soupNoodle') Soup Noodles
+            a.categoryLinks-link(href='#loMein') Lo Mein
+            a.categoryLinks-link(href='#padThai') Pad Thai
+            a.categoryLinks-link(href='#singapore') Singapore Chow Mein Fun
+            a.categoryLinks-link(href='#maiFun') Taiwan Chow Mai Fun
+            a.categoryLinks-link(href='#chowFun') Chow Fun Noodles
+            a.categoryLinks-link(href='#chefSpecial') Chef's Special
+    .orderMenus#menu-regular
+        .regularContainer
+            .categoryLinks
+                    a.categoryLinks-link(href='#soups') Soups
+                    a.categoryLinks-link(href='#appetizers') Appetizers
+                    a.categoryLinks-link(href='#vegetables') Vegetables
+                    a.categoryLinks-link(href='#pork') Pork
+                    a.categoryLinks-link(href='#chicken') Chicken
+                    a.categoryLinks-link(href='#beef') Beef
+                    a.categoryLinks-link(href='#seafood') Seafood
+                    a.categoryLinks-link(href='#friedRice') Fried Rice
+                    a.categoryLinks-link(href='#friedNoodle') Asian Pan Fried Noodles
+                    a.categoryLinks-link(href='#soupNoodle') Soup Noodles
+                    a.categoryLinks-link(href='#loMein') Lo Mein
+                    a.categoryLinks-link(href='#padThai') Pad Thai
+                    a.categoryLinks-link(href='#singapore') Singapore Chow Mein Fun
+                    a.categoryLinks-link(href='#maiFun') Taiwan Chow Mai Fun
+                    a.categoryLinks-link(href='#chowFun') Chow Fun Noodles
+                    a.categoryLinks-link(href='#chefSpecial') Chef's Special
+            .mainContainer
+                p.itemInfo.itemInfo-boxed
+                    | This order method is for PICK-UP ONLY. <br/>
+                    | Order with Grubhub or Postmate for delivery. <br/>
+                    | Orders made outside of operating hours will be ignored and refunded as soon as possible.
+                p.itemInfo.itemInfo-spicy
+                    | Red Items Are Spicy!
+                .categoriesContainer
+                    .categories#soups
+                        h2.itemHeader
+                            | Soups 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "soup"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#appetizers
+                        h2.itemHeader
+                            | Appetizers
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "appetizers"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#vegetables
+                        h2.itemHeader
+                            | Vegetables
+                        p.itemInfo
+                            | (w/ Fried or Steamed Rice)
+                        p.itemInfo
+                            | (w/ Plain Lo Mein +$3.25)
+                        p.itemInfo
+                            | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "vegetables"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#pork
+                        h2.itemHeader
+                            | Pork
+                        p.itemInfo
+                            | (w/ Fried or Steamed Rice)
+                        p.itemInfo
+                            | (w/ Plain Lo Mein +$3.25)
+                        p.itemInfo
+                            | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "pork"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#chicken
+                        h2.itemHeader
+                            | Chicken
+                        p.itemInfo
+                            | (w/ Fried or Steamed Rice)
+                        p.itemInfo
+                            | (w/ Plain Lo Mein +$3.25)
+                        p.itemInfo
+                            | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "chicken"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#beef
+                        h2.itemHeader
+                            | Beef
+                        p.itemInfo
+                            | (w/ Fried or Steamed Rice)
+                        p.itemInfo
+                            | (w/ Plain Lo Mein +$3.25)
+                        p.itemInfo
+                            | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "beef"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#seafood
+                        h2.itemHeader
+                            | Seafood
+                        p.itemInfo
+                            | (w/ Fried or Steamed Rice)
+                        p.itemInfo
+                            | (w/ Plain Lo Mein +$3.25)
+                        p.itemInfo
+                            | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "seafood"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#friedRice
+                        h2.itemHeader
+                            | Fried Rice
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "friedRice"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#friedNoodle
+                        h2.itemHeader
+                            | Asian Pan Fried Noodles
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "friedNoodle"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#soupNoodle
+                        h2.itemHeader
+                            | Soup Noodles
+                        p.itemInfo
+                            | (Soft Egg Noodle, Mei Fun Noodle, Thai Rice Noodle, or +$1 Chow Fun)
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "soupNoodle"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#loMein
+                        h2.itemHeader
+                            | Lo Mein
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "loMein"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#padThai
+                        h2.itemHeader
+                            | Pad Thai
+                        p.itemInfo
+                            | (Thailand Rice Noodle)
+                        p.itemInfo
+                            | Stir-fried in a Special Pad Thai Sauce with Bean Sprout, Fried Tofu, Peanuts, and Egg + Lemon on the Side 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "padThai"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#singapore
+                        h2.itemHeader
+                            | Singapore Chow Mein Fun
+                        p.itemInfo
+                            | (Rice Noodle)
+                        p.itemInfo
+                            | Rice Noodle Stir-fried in Curry Favored Sauce with Bean Sprout, Chinese Napa, and Egg 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "singapore"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#maiFun
+                        h2.itemHeader
+                            | Taiwan Chow Mai Fun
+                        p.itemInfo
+                            | (Rice Noodle)
+                        p.itemInfo
+                            | Taiwan Chow Mai Fun Rice Noodle Stir-fried in Sauce with Bean Sprout, Chinese Napa, and Egg  
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "maiFun"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#chowFun
+                        h2.itemHeader
+                            | Chow Fun Noodles
+                        p.itemInfo
+                            | (Hong Kong Style)
+                        p.itemInfo
+                            | Cooked with Bean Sprout and Chinese Napa  
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "chowFun"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+                    .categories#chefSpecial
+                        h2.itemHeader
+                            | Chef's Special
+                        p.itemInfo
+                            | (w/ Fried or Steamed Rice)
+                        p.itemInfo
+                            | (w/ Plain Lo Mein +$3.25)
+                        p.itemInfo
+                            | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
+                        .itemsContainer
+                            each item in menu.regularMenu
+                                if item.category == "chefSpecial"
+                                    .itemBox(id=`r${item.id}`)
+                                        if item.spicy
+                                            p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                        else
+                                            p.itemName= `${item.id}. ${item.name}`
+                                        each price in item.prices
+                                            p.itemPrice= price
+    each item in menu.regularMenu
+        .itemModal(id=`r${item.id}-modal`)
+            form.itemModal-box(id=`r${item.id}-form`)
+                span.close(id=`r${item.id}-close`) &times;
+                h3.itemModal-header #{item.id}. #{item.name}
+                if item.spicy
+                    p.itemModal-price.itemSpicy SPICY
+                p.itemModal-desc= item.desc
+                p.itemModal-price Pricing
+                .radio-box
+                    each price in item.prices
+                        label.radio-container
+                            | #{price}
+                            input(type='radio' checked='checked' name=`r${item.id}-price` value=`${price}` required="true")
+                            span.checkmark
+                if item.category == "vegetables" || item.category == "beef" || item.category == "chicken" || item.category == "pork" || item.category == "seafood" || item.category == "chefSpecial"
+                    p.itemModal-price Options
+                    .radio-box
+                        label.radio-container
+                                | White Rice
+                                input(type='radio' checked='checked' name=`r${item.id}-options` value='white' required="true")
+                                span.checkmark
+                        label.radio-container
+                                | Fried Rice
+                                input(type='radio' name=`r${item.id}-options` value='fried')
+                                span.checkmark
+                        label.radio-container
+                                | Plain Lo Mein (+$3.25)
+                                input(type='radio' name=`r${item.id}-options` value='loMein')
+                                span.checkmark
+                        label.radio-container
+                                | Beef Lo Mein (+$3.75)
+                                input(type='radio' name=`r${item.id}-options` value='bLoMein')
+                                span.checkmark
+                        label.radio-container
+                                | Pork Lo Mein (+$3.75)
+                                input(type='radio' name=`r${item.id}-options` value='pLoMein')
+                                span.checkmark
+                        label.radio-container
+                                | Seafood Lo Mein (+$3.75)
+                                input(type='radio' name=`r${item.id}-options` value='sLoMein')
+                                span.checkmark
+                if item.category == "soupNoodle"
+                    p.itemModal-price Options
+                    .radio-box
+                        label.radio-container
+                                | Chow Fun (+$1)
+                                input.chowFun(type='radio' name=`r${item.id}-options` value='chowFun')
+                                span.checkmark
+                if item.id == "A4" || item.id == "A14"
+                    p.itemModal-price Options
+                    .radio-box
+                        label.radio-container
+                                | Pan Fried
+                                input(type='radio' name=`r${item.id}-options` checked='checked' value='panFried' required)
+                                span.checkmark
+                        label.radio-container
+                                | Steamed
+                                input(type='radio' name=`r${item.id}-options` value='Steamed')
+                                span.checkmark
+                input(id=`r${item.id}-name` value=`${item.name}` type='hidden')
+                button.modalBtn(type='submit') Add to Cart
+
+    each item in menu.specialMenu
+        .itemModal(id=`s${item.id}-modal`)
+            form.itemModal-box(id=`s${item.id}-form`)
+                span.close(id=`s${item.id}-close`) &times;
+                h3.itemModal-header #{item.id}. #{item.name}
+                if item.spicy
+                    p.itemModal-price.itemSpicy SPICY
+                p.itemModal-price Pricing
+                .radio-box
+                    each price in item.prices
+                        label.radio-container
+                            | #{price}
+                            input(type='radio' checked='checked' name=`s${item.id}-price` value=`${price}` required="true")
+                            span.checkmark
+                if item.options.length > 0
+                    p.itemModal-price Meat Options
+                    .radio-box
+                        each option in item.options
+                            label.radio-container
+                                | #{option}
+                                input(type='radio' checked='checked' name=`s${item.id}-meat-options` value=`${option}` required="true")
+                                span.checkmark     
+                p.itemModal-price Rice Options
+                .radio-box
+                    label.radio-container
+                        | White Rice
+                        input(type='radio' checked='checked' name=`s${item.id}-rice-options` value='White' required="true")
+                        span.checkmark
+                    label.radio-container
+                        | Fried Rice
+                        input(type='radio' name=`s${item.id}-rice-options` value='Fried')
+                        span.checkmark
+                input(id=`s${item.id}-name` value=`${item.name}` type='hidden')
+                button.modalBtn(type='submit') Add to Cart
+    .shopping-cart-modal#sc-modal
+        .shopping-cart-modal-box
+            span.close(id='sc-close') &times;
+            h2.shopping-cart-modal-header Shopping Cart
+            ul.shopping-cart-modal-list#sc-list
+            p.shopping-cart-modal-total#sc-total 
+                | Total Cost: $
+                span#cost 0.00
+    .payment-modal#pay-modal
+        #stripe-form
+            span.close(id='pay-close') &times;
+            form#payment-form(action='/order' method='post')
+                .form-row
+                    .cc-text Name
+                    input.card-name(type='text', size='30', maxlength='30', autocomplete='off' required)
+                .form-row
+                    label(for='card-element')
+                        | Credit or debit card
+                    #card-element
+                        // A Stripe Element will be inserted here.
+                        // Used to display Element errors.
+                        #card-errors(role='alert')
+                input#cc-amount(type='hidden', name='amount', value='0')
+                input#publicKey(type='hidden' value=`${stripePublicKey}`)
+                p.payment-amount-due 
+                    | Amount Due: $
+                    span#amount 0.00 
+                button.submit-button#pay-submit(type='submit') Submit Payment
+    #error.hidden
+    #success.hidden Thanks for ordering with us!
+    footer.footer
+      | © Szechuan Express 2020
+    script(src='/js/orderPage.js')
+    

@@ -1,0 +1,1432 @@
+doctype html
+html(lang='en')
+  head
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-162157542-2')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+      dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-162157542-2");
+    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Szechuan Express has been serving Chinese food to Pittsburgh since 1996.')
+    meta(http-equiv='Content-Security-Policy', content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com/aos@2.3.1/dist/aos.js")
+    link(rel='canonical', href='https://szechuanexpresspgh.com/')
+    link(rel='stylesheet', type='text/css', href='/css/main.min.css')
+    link(href='https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css2?family=Gotu&display=swap', rel='stylesheet')
+    link(href='https://unpkg.com/aos@2.3.1/dist/aos.css', rel='stylesheet')
+    link(rel='icon', type='image/png', href='/img/logo.png')
+    title Szechuan Express
+  body(ontouchstart='')
+    section.hero
+      nav.nav
+        ul.nav-list
+          li.nav-item
+            a.nav-link.underline(href='#about') About
+          li.nav-item
+            a.nav-link.underline(href='#menu') Menu
+          li.nav-item
+            a.nav-link.underline(href='#methods') Ordering
+          li.nav-item
+            a.nav-link.underline(href='#contact') Contact
+          li.nav-item
+            a.nav-link.nav-link-order.underline(href='/order') Order Online
+      .hero-header-container
+        h1.hero-header(data-aos='fade-up', data-aos-duration='1000')
+          | Szechuan Express
+        h1.hero-header(data-aos='fade-up', data-aos-delay='50', data-aos-duration='1000')
+          | Asian Noodle Shop
+        .hero-header-cn-container
+          h1.hero-header.hero-header-cn(data-aos='fade-up', data-aos-delay='100', data-aos-duration='1000')
+            | 四川快餐
+          h1.hero-header.hero-header-cn(data-aos='fade-up', data-aos-delay='150', data-aos-duration='1000')
+            | 亚洲面店
+      a.hero-cta(href='#methods', data-aos='fade-up', data-aos-delay='200', data-aos-duration='1000') Order Now!
+    section#about.about
+      p.warning(data-aos='fade-in', data-aos-duration='1000')
+        span.warning-title  We are open!
+        br
+        span.warning-title  Hours: 11:30AM - 7:40PM
+        br
+        span.warning-title  We are not open Saturday
+        br
+        |         To Our Customers, Please Read!
+        br
+        |         Due to the Coronavirus, here are some rules to ensure the safety of our
+        |         employees:
+        br
+        br
+        |         1. Check out the menu and call:
+        a.order-link(href='tel:412-687-8000') (412) 687-8000
+        br
+        br
+        |         2. You must pay by card. We will accept cash for large order over
+        |         $30.
+        br
+        br
+        span.warning-underline If you order in person:
+        br
+        |         You must order on the phone and then hand us your card between the two
+        |         front doors for the payment. We do not accept face to face
+        |         interaction.
+        br
+        br
+        span.warning-underline If you order on the phone from elsewhere:
+        br
+        |         You have to provide us your credit card number and the 3 digits on the
+        |         back.
+        br
+        br
+        |         4. We pack all the utensils and sauces for you and call you when the
+        |         food is ready.
+        br
+        br
+        |         5. Once you’re here, we will open the door to give you your order.
+        br
+        br
+        |         6. If you are 10 minutes away, please call before you come. Let us know,
+        |         when you are here so we can open the door. 
+        br
+        br
+        |         Thank you for your cooperation!
+        br
+        |         - Jason Lin
+      br
+      h2.about-header About Us
+      p.about-text(data-aos='fade-up', data-aos-duration='1000')
+        | We have been serving the neighborhood of Oakland in Pittsburgh since
+        | 1996. The best traditional Chinese dishes and noodle soups in town. We
+        | serve lunch prices all day long. Call us at
+        a.order-link(href='tel:412-687-8000') (412) 687-8000
+        |  right
+        |         now. Quick, fresh, and tasty. We got spicy Szechuan-style food. We also
+        |         do delivery with Grubhub and Postmates.
+    section#menu.menu
+      h2.menu-header Menu
+      p.menu-disclaimer
+        | *The price on the non-paper menus are the real prices. Prices found from other
+        | sources might not be updated.
+      a.menu-btn.underline-red(href='#menu-modal') Check Out the Regular Menu
+      br
+      br
+      a.menu-btn.underline-red(href='#menu-modal-special') Check Out the Specials Menu
+      br
+      br
+      a.menu-btn.underline-red(href='#menu-modal-paper') Check Out the Regular Paper Menu
+      br
+      br
+      a.menu-btn.underline-red(href='#menu-modal-special-paper') Check Out the Specials Paper Menu
+      .menu-gallery
+        .menu-gallery-picture-container(data-aos='fade-in', data-aos-duration='1000')
+          img.menu-gallery-picture(src='/img/food-1.jpg', alt='Beef Short Ribs w/ Black Pepper Sauce', width='720', height='720')
+          .menu-gallery-text(onclick='')
+            p
+              | Beef Short Ribs w/ Black Pepper Sauce
+              br
+              | 黑胡椒牛小排
+        .menu-gallery-picture-container(data-aos='fade-in', data-aos-duration='1000')
+          img.menu-gallery-picture(src='/img/food-2.jpg', alt='Roast Duck Pecking Style', width='720', height='720')
+          .menu-gallery-text(onclick='')
+            p
+              | Roast Duck Pecking Style
+              br
+              | 京城烤鸭
+        .menu-gallery-picture-container(data-aos='fade-in', data-aos-duration='1000')
+          img.menu-gallery-picture(src='/img/food-3.jpg', alt='Hot and Spicy Chicken', width='720', height='720')
+          .menu-gallery-text(onclick='')
+            p
+              | Hot and Spicy Chicken
+              br
+              | 辣子鸡
+        .menu-gallery-picture-container(data-aos='fade-in', data-aos-duration='1000')
+          img.menu-gallery-picture(src='/img/food-4.jpg', alt='Sweet & Sour Fish Fillet', width='720', height='720')
+          .menu-gallery-text(onclick='')
+            p
+              | Sweet & Sour Fish Fillet
+              br
+              | 甜酸鱼片
+        .menu-gallery-picture-container(data-aos='fade-in', data-aos-duration='1000')
+          img.menu-gallery-picture(src='/img/food-5.jpg', alt='Salt & Pepper Chicken', width='720', height='720')
+          .menu-gallery-text(onclick='')
+            p
+              | Salt & Pepper Chicken
+              br
+              | 盐酥鸡
+        .menu-gallery-picture-container(data-aos='fade-in', data-aos-duration='1000')
+          img.menu-gallery-picture(src='/img/food-6.jpg', alt='Stir-fried Shredded Pork w/ Hot Peppers', width='720', height='720')
+          .menu-gallery-text(onclick='')
+            p
+              | Stir-fried Shredded Pork w/ Hot Peppers
+              br
+              | 农家小炒肉
+    section#methods.order
+      h2.order-header Order Now
+      .order-methods
+        .order-phone(data-aos='zoom-in', data-aos-duration='1000')
+          img.order-icon.order-icon-phone(src='/img/phone.png', alt='')
+          h3.order-method Order By Phone
+          a.order-link.underline-red(href='tel:412-687-8000') (412) 687-8000
+        .order-phone(data-aos='zoom-in', data-aos-duration='1000')
+          img.order-icon.order-icon-sz(src='/img/logo.png', alt='')
+          h3.order-method Order Here
+          a.order-link.underline-red(href='/order') Click Here!
+        .order-grubhub(data-aos='zoom-in', data-aos-duration='1000')
+          img.order-icon.order-icon-gh(src='/img/grubhub-logo.png', alt='')
+          h3.order-method Order With Grubhub
+          a.order-link.underline-red(href='https://www.grubhub.com/restaurant/szechuan-express-125-oakland-ave-pittsburgh/260293', target='_blank') Click Here!
+        .order-postmate(data-aos='zoom-in', data-aos-duration='1000')
+          img.order-icon.order-icon-pm(src='/img/postmate-logo.jpg', alt='')
+          h3.order-method Order With Postmates
+          a.order-link.underline-red(href='https://postmates.com/merchant/szechuan-express-pittsburgh', target='_blank') Click Here!
+    section#contact.contact
+      .contact-info
+        h2.contact-header Information
+        |         125 Oakland Ave
+        br
+        |         Pittsburgh, PA 15213
+        br
+        |         (412) 687-8000
+        h2.contact-header Hours
+        |         Monday-Friday: 11:00am - 8:00pm
+        br
+        |         Saturday: Close
+        br
+        |         Sunday: 12:00pm - 8:00pm
+        .payment-options
+          img.pay-img(src='/img/credit-cards.png', alt='Credit Cards', width='500', height='500')
+          img.pay-img(src='/img/panther-fund.jpg', alt='Panther Fund', width='500', height='500')
+          img.pay-img(src='/img/wechat.png', alt='WeChat Pay', width='500', height='500')
+          img.pay-img(src='/img/alipay.png', alt='Alipay', width='500', height='500')
+      img.contact-picture(src='/img/storefront.jpg', alt='')
+      div
+        iframe.contact-map(src='https://maps.google.com/maps?width=100%&height=400&hl=en&q=125%20Oakland%20Ave%2C%20Pittsburgh%2C%20PA%2015213+(Szechuan%20Express)&ie=UTF8&t=&z=16&iwloc=B&output=embed', scrolling='no', marginheight='0', marginwidth='0', frameborder='0')
+          | <a href="https://www.maps.ie/draw-radius-circle-map/"
+          | >Google Maps Radius</a
+          | >
+    footer.footer
+      | © Szechuan Express 2020
+    #menu-modal-paper.menu-modal
+      a.menu-modal-close(href='#menu') ×
+      .pages-container
+        img.pages(src='/img/menu-1.jpg', alt='')
+        img.pages(src='/img/menu-2.jpg', alt='')
+        img.pages(src='/img/menu-3.jpg', alt='')
+        img.pages(src='/img/menu-4.jpg', alt='')
+        img.pages(src='/img/menu-5.jpg', alt='')
+    #menu-modal-special-paper.menu-modal
+      a.menu-modal-close(href='#menu') ×
+      .pages-container
+        img.pages(src='/img/menu-6.jpg', alt='')
+        img.pages(src='/img/menu-7.jpg', alt='')
+    #menu-modal-special.menu-modal
+      a.menu-modal-close(href='#menu') ×
+      .menu-modal-menu
+        h2.menu-modal-header Specials Menu
+        p.menu-modal-subheader
+          span.menu-modal-item-spicy  🌶
+          |  = Hot & Spicy Item
+          br
+          |           Spiciness Can Be Adjusted
+        .menu-modal-items
+          .menu-modal-category.menu-modal-soup
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 1. Shell Shrimp w/ Garlic Ginger Flavor
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 2. Spicy Black Bean Shell Shrimp
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 3. Shell Shrimp w/ Hot Spicy Jalapeno Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 4. Fried Chicken or Tofu w/ Cumin Flavor
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 5. Taiwanese Basil Three Cup Chicken or Fish
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50 (w/ Tofu $8.50)
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 6. Chinese Eggplant in Basil Sauce
+                span.menu-modal-name-spicy  🌶
+                br
+                |                      w/ Choice of Meat
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 7. Shredded Pork/Beef/Shrimp w/ Baby Bamboo
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 8. Stir-fried Bean Curb & Chives
+                span.menu-modal-name-spicy  🌶
+                br
+                |                      w/ Choice of Meat
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 9. Scrambled Egg w/ Tomato, Mushroom, Zucchini
+              span.menu-modal-price $7.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 10. Shredded Pork/Beef/Shrimp w/ Baby Bamboo
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 11. Beef Short Ribs w/ Lamb Flavor
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 12. Jalapeno Flavor Beef Short Ribs
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 13. Braised Beef Short Ribs
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 14. Garlic Ginger Shrimp w/ Beef Short Ribs
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 15. Hot Spicy Stewed w/ White Radish
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 16. Shredded Beef/Pork w/ White Radish Chuan Spicy
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 17. Boil Steam Pork/Beef w/ Spicy Broth
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 18. Boil Steam Fish w/ Spicy Broth
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 19. Ma La Spicy Potato Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 20. Hot Spicy Peppered Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 21. Salted Black Bean Pork w/ Spicy Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 22. Jalapeno Hibachi Oven Rice
+                span.menu-modal-name-spicy  🌶
+                br
+                |                       w/ Choice of Meat
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 23. Marinated Minced Pork Over Rice 
+                br
+                |                       w/ Marinated Egg & Sour Vegetable
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 24. Sweet Vinegar Fish Fillet
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 25. Thai Green Paste Curry Beef
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 26. Stir-fried Pork w/ Green Pepper
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 27. Roast Duck Garlic Ginger Flavor
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 28. Roast Duck Garlic Style
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 28A. Hot Spicy Szechuan Duck
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 29. Chinese Home Style Egg Noodle Soup 
+                br
+                |                       w/ Choice of Meat
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 30. Sour Cabbage Beef Noodle Soup
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 33. Salt Pepper Combination
+                span.menu-modal-name-spicy   🌶
+                br
+                |                        (Tofu, Fish, Shell Shrimp)
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 34. Fried Rice w/ Tasty Chinese Dry Chili
+                span.menu-modal-name-spicy   🌶
+                br
+                |                        Pepper Crush
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 35. Fish Fillet w/ Black Bean Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 36. Fish Fillet w/ Sour Pickled Cabbage
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 37. Fish Fillet w/ Egg Drop and Tomato
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 38. Fried Salty Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 40. Kimchi Tofu Hot Pot
+                span.menu-modal-name-spicy   🌶
+                br
+                |                        w/ Beef or Seafood
+              span.menu-modal-price $9.50 ($8.50 w/ Veggie)
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 41. Fish Fillet Sour Cabbage Noodle Soup
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 42. Fish Fillet Noodle Soup w/ Spicy Broth
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 43. Seafood Noodle Soup w/ Egg 
+                br
+                |                        (Shrimp & Fish)
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 44. Stir-fried Marinated Chicken Wings
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 45. Taiwanese Crispy Fish
+                span.menu-modal-name-spicy  🌶
+                br
+                |                        w/ Garlic Ginger Flavor
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 49. Breaded Boneless Chicken Cutlet
+                span.menu-modal-name-spicy  🌶
+                br
+                |                        w/ Basil Sauce
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 50. Breaded Boneless Chicken Cutlet
+                span.menu-modal-name-spicy  🌶
+                br
+                |                        w/ Black Bean Sauce
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 51. Breaded Boneless Chicken Cutlet
+                span.menu-modal-name-spicy  🌶
+                br
+                |                        w/ Spicy Jalapeno Sauce
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 52. Bourbon Chicken
+              span.menu-modal-price $7.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 53. Mao Po Tofu w/ Minced Pork
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 54. Fish Fillet or Beef w/ Picked Pepper
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 55. Stir-fried Fish Fillet w/ Sour Cabbage
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 56. Kimchi Fried Rice
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 59. Braised Shell Shrimp w/ Beef Short Ribs
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 62. Fish Fillet
+                span.menu-modal-name-spicy  🌶
+                br
+                |                        w/ Tasty Chinese Dry Chili Pepper
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 63. Soft Tofu w/ Beef or Fish Fillet
+              span.menu-modal-price $9.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 64. Curry Fried Rice
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 65. Sautéed Shanghai Bok-Choy
+              span.menu-modal-price $8.50
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 67. Chili Pepper Beef
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $9.50
+    #menu-modal.menu-modal
+      a.menu-modal-close(href='#menu') ×
+      .menu-modal-menu
+        h2.menu-modal-header Menu
+        p.menu-modal-subheader
+          span.menu-modal-item-spicy  🌶
+          |  = Hot & Spicy
+          |           Item
+          br
+          | Spiciness Can Be Adjusted
+        .menu-modal-items
+          .menu-modal-category.menu-modal-soup
+            h3.menu-modal-subheader Soup
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | S1. Wonton Soup
+              span.menu-modal-price (S) $2.75 (L) $4.25
+            .menu-modal-item
+              p.menu-modal-name
+                | S2. Hot & Sour Soup
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price (S) $2.75 (L) $4.25
+            .menu-modal-item
+              p.menu-modal-name
+                | S3. Vegetable Bean Curd Soup 
+                br
+                |        w/
+                |                 Rice on the Side
+              span.menu-modal-price $6.00
+            .menu-modal-item
+              p.menu-modal-name
+                | S4. Egg Drop Soup
+              span.menu-modal-price (S) $2.75 (L) $4.25
+            .menu-modal-item
+              p.menu-modal-name
+                | S5. House Special Soup
+              span.menu-modal-price $6.79
+            .menu-modal-item
+              p.menu-modal-name
+                | S6. Tomato Egg Drop Soup
+              span.menu-modal-price (S) $3.75 (L) $6.00
+          .menu-modal-category.menu-modal-app
+            h3.menu-modal-subheader Appetizers
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | A3. Sesame Cold Noodle
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $5.50
+            .menu-modal-item
+              p.menu-modal-name
+                | A4. Pan Fried or Steamed Dumplings (10)
+              span.menu-modal-price $6.50
+            .menu-modal-item
+              p.menu-modal-name
+                | A5. Chicken Finger (6)
+              span.menu-modal-price $5.50
+            .menu-modal-item
+              p.menu-modal-name
+                | A6. Fried Scallop (10)
+              span.menu-modal-price $5.50
+            .menu-modal-item
+              p.menu-modal-name
+                | A7. Shrimp Egg Roll (1)
+              span.menu-modal-price $1.80
+            .menu-modal-item
+              p.menu-modal-name
+                | A8. Pork Egg Roll (1)
+              span.menu-modal-price $1.80
+            .menu-modal-item
+              p.menu-modal-name
+                | A9. Beef Egg Roll (1)
+              span.menu-modal-price $1.80
+            .menu-modal-item
+              p.menu-modal-name
+                | A10. Vegetable Egg Roll (1)
+              span.menu-modal-price $1.80
+            .menu-modal-item
+              p.menu-modal-name
+                | A11. Crab Rangoon (8)
+              span.menu-modal-price $6.00
+            .menu-modal-item
+              p.menu-modal-name
+                | A12. Fried Cuttlefish Balls (10)
+              span.menu-modal-price $6.08
+            .menu-modal-item
+              p.menu-modal-name
+                | A13. Fried Wonton (10)
+              span.menu-modal-price $6.00
+            .menu-modal-item
+              p.menu-modal-name
+                | A14. Fried or Steamed Veggie Dumplings
+              span.menu-modal-price $6.51
+            .menu-modal-item
+              p.menu-modal-name
+                | A16. Whole Chicken Wings
+              span.menu-modal-price (4) $5.39 (8) $9.50 (24) $16.50
+            .menu-modal-item
+              p.menu-modal-name
+                | A17. Italian Wing Dings
+              span.menu-modal-price (4) $5.39 (8) $9.50 (24) $16.50
+          .menu-modal-category.menu-modal-veg
+            h3.menu-modal-subheader Vegetables
+            p.menu-modal-info (w/ Fried or Steamed Rice)
+            p.menu-modal-info (w/ Plain Lo Mein +$3.25)
+            p.menu-modal-info
+              | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 10. Vegetable Combo
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 11. Broccoli w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 12 Dried Sautéed String Bean
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 13. Fried Tofu w/ Mixed Vegetable
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 14. Vegetable Delight w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 15. Eggplant w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 16. Tofu Family Style
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 17. Tofu Bean Curd Szechuan Style
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 18. Sautéed Broccoli
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 19. String Bean & Eggplant
+                span.menu-modal-name-spicy  🌶
+                br
+                |                       w/ Garlic Sauce or Tofu
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20. Broccoli w/ General Tso's Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20a. General Tso's Tofu
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20b. Sesame Tofu
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20c. Ma Po Tofu
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20d. Curry Tofu w/ Onion
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20e. Kung Pao Tofu
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20f. Tofu w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20g. Teriyaki Tofu
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20i. Cashew Nuts Tofu
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20j. Sha Cha Tofu
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20k. Tofu w/ Hunan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 20l. Fried Tofu or Soft Tofu w/ Bok-Choy
+              span.menu-modal-price $7.04
+          .menu-modal-category.menu-modal-pork
+            h3.menu-modal-subheader Pork
+            p.menu-modal-info (w/ Fried or Steamed Rice)
+            p.menu-modal-info (w/ Plain Lo Mein +$3.25)
+            p.menu-modal-info
+              | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 21. Double Cooked Pork
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 22. Shredded Pork w/ Chili Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 23. Pork w/ Scallions
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 24. Shredded Pork w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 25. Sha Cha Pork
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 26. Pork w/ Broccoli
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 27. Pork w/ Hunan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 28. Pork w/ Szechuan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 29. Moo Goo Pork
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 30. Pork w/ Mixed Vegetables
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 31. Pork w/ String Bean
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 32. Pepper Pork
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 33. Pork & Eggplant w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 34. Curry Pork w/ Onion
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+          .menu-modal-category.menu-modal-chicken
+            h3.menu-modal-subheader Chicken
+            p.menu-modal-info (w/ Fried or Steamed Rice)
+            p.menu-modal-info (w/ Plain Lo Mein +$3.25)
+            p.menu-modal-info
+              | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 35. Chicken w/ Broccoli
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 36. Chicken w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 37. Kung Pao Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 39. Moo Goo Gai Pan
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 40. Chicken w/ Cashew Nuts
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 41. Sweet & Sour Chicken
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 42. Chicken & Eggplant w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 43. Szechuan Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 44. Chicken w/ Chili Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 45. Chicken w/ Mixed Vegetables
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 46. Chicken w/ String Bean
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 47. Chicken w/ Hunan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 98. Curry Chicken w/ Onion
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 49. Chicken & Shrimp w/ Kung Pao Sauce
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 50. Chicken w/ Oyster Sauce
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 51. Sha Cha Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 52. Pepper Chicken
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 52a. Thailand Coconut Curry Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 52b. Teriyaki Chicken
+              span.menu-modal-price $7.51
+          .menu-modal-category.menu-modal-beef
+            h3.menu-modal-subheader Beef
+            p.menu-modal-info (w/ Fried or Steamed Rice)
+            p.menu-modal-info (w/ Plain Lo Mein +$3.25)
+            p.menu-modal-info
+              | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 53. Beef w/ Broccoli
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 54. Shredded Beef w/ Chili Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 55. Beef w/ Oyster Sauce
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 56. Sha Cha Beef
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 57. Beef w/ Hunan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 58. Pepper Beef
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 59. Beef w/ Scallions
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 60. Shredded Beef w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 62. Beef w/ Mixed Vegetables
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 63. Mongolian Beef
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 64. Moo Goo Beef
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 65. Beef w/ String Bean
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 66. Curry Beef w/ Onion
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 67. Szechuan Beef
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 67a. Kung Pao Beef
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 67b. Taiwanese Stewed Beef Over Rice
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+          .menu-modal-category.menu-modal-seafood
+            h3.menu-modal-subheader Seafood
+            p.menu-modal-info (w/ Fried or Steamed Rice)
+            p.menu-modal-info (w/ Plain Lo Mein +$3.25)
+            p.menu-modal-info
+              | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 68. Shrimp w/ Kung Pao Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 69. Shrimp w/ Cashews
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 70. Shrimp w/ Mixed Vegetables
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 71. Shrimp w/ Broccoli
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 72. Shrimp w/ Eggplant w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 73. Shrimp w/ String Bean
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 74. Sweet & Sour Shrimp
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 75. Shrimp w/ Bean Sprout
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 76. Szechuan Shrimp
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 77. Shrimp w/ Garlic Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 78. Shrimp w/ Hunan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 79. Shrimp w/ Mushroom
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 80. Shrimp w/ Chili Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 81. Curry Shrimp w/ Onion
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+          .menu-modal-info-container
+            h3.menu-modal-subheader Weight Watch Menu
+            p.menu-modal-info
+              | Chicken, Shrimp, and Vegetable dishes from #10 to #81 can be steam
+              | cooked without oil (sauce on the side).
+            p.menu-modal-info
+              | Weight Watcher's Meal, Pick your own sauce: brown sauce, sesame
+              | sauce, Hunan sauce, Szechuan sauce, lemon sauce, honey sauce,
+              | curry sauce, white sauce.
+          .menu-modal-category.menu-modal-fried-rice
+            h3.menu-modal-subheader Fried Rice
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 82. Combination Fried Rice 
+                br
+                |                        (Chicken, Shrimp, Pork)
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 83. Young Chow Fried Rice 
+                br
+                |                        (Chicken, Shrimp, Pork)
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 84. Shrimp Fried Rice
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 85. Beef Fried Rice
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 86. Chicken Fried Rice
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 87. Pork Fried Rice
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 88. Vegetable Fried Rice
+              span.menu-modal-price $7.04
+            .menu-modal-item
+              p.menu-modal-name
+                | 89. Plain Fried Rice
+              span.menu-modal-price (S) $2.50 (L) $4.00
+            .menu-modal-item
+              p.menu-modal-name
+                | 90. Plain White Rice
+              span.menu-modal-price (S) $2.50 (L) $4.00
+          .menu-modal-category.menu-modal-pan-fried
+            h3.menu-modal-subheader Asian Pan Fried Noodles
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 116. Pan Fried Noodle w/ Shrimp
+              span.menu-modal-price $8.21
+            .menu-modal-item
+              p.menu-modal-name
+                | 117. Pan Fried Noodle w/ Chicken
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 118. Pan Fried Noodle w/ Pork
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 119. Pan Fried Noodle w/ Beef
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 120. Pan Fried Noodle w/ Vegetable
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 121. Pan Fried Noodle w/ Combination
+              span.menu-modal-price $8.21
+          .menu-modal-category.menu-modal-soup-noodles
+            h3.menu-modal-subheader Soup Noodles
+            p.menu-modal-info
+              | (Soft Egg Noodle, Mei Fun Noodle, Thai Rice Noodle, or +$1 Chow
+              | Fun)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 122. Shrimp Noodle Soup
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 123. Chicken Noodle Soup
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 124. Taiwanese Stewed Beef Noodle Soup
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.50
+            .menu-modal-item
+              p.menu-modal-name
+                | 125. Pork Noodle Soup
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 126. Vegetable Noodle Soup
+              span.menu-modal-price $6.78
+            .menu-modal-item
+              p.menu-modal-name
+                | 127. Combination Noodle Soup 
+                br
+                |                         (Chicken, Shrimp, Pork)
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 127a. Bok-Choy Noodle Soup w/ Tofu
+              span.menu-modal-price $7.74
+            .menu-modal-item
+              p.menu-modal-name
+                | 127c. Roast Duck Noodle Soup
+              span.menu-modal-price $8.50
+          .menu-modal-category.menu-modal-lo-mein
+            h3.menu-modal-subheader Lo Mein
+            p.menu-modal-info (Soft Egg Flour Noodle)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 128. Combination Lo Mein (Chicken, Shrimp, Pork)
+              span.menu-modal-price $8.21
+            .menu-modal-item
+              p.menu-modal-name
+                | 129. Shrimp Lo Mein
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 130. Beef Lo Mein
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 131. Chicken Lo Mein
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 132. Pork Lo Mein
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 133. Vegetable Lo Mein
+              span.menu-modal-price $7.51
+          .menu-modal-category.menu-modal-pad-thai
+            h3.menu-modal-subheader Pad Thai
+            p.menu-modal-info (Thailand Rice Noodle)
+            p.menu-modal-info
+              | Stir-fried in a Special Pad Thai Sauce with Bean Sprout, Fried
+              | Tofu, Peanuts, and Egg + Lemon on the Side
+            .menu-modal-item.topped
+              .menu-modal-item
+                p.menu-modal-name
+                  | 134. Pad Thai Shrimp
+                span.menu-modal-price $7.98
+              .menu-modal-item
+                p.menu-modal-name
+                  | 135. Pad Thai Beef
+                span.menu-modal-price $7.98
+              .menu-modal-item
+                p.menu-modal-name
+                  | 136. Pad Thai Chicken
+                span.menu-modal-price $7.98
+              .menu-modal-item
+                p.menu-modal-name
+                  | 137. Pad Thai Pork
+                span.menu-modal-price $7.98
+              .menu-modal-item
+                p.menu-modal-name
+                  | 138. Pad Thai Vegetable
+                span.menu-modal-price $7.51
+              .menu-modal-item
+                p.menu-modal-name
+                  | 139. Pad Thai Combination (Chicken, Shrimp, Pork)
+                span.menu-modal-price $8.21
+          .menu-modal-category.menu-modal-singapore
+            h3.menu-modal-subheader Singapore Chow Mein Fun
+            p.menu-modal-info (Rice Noodle)
+            p.menu-modal-info
+              | Rice Noodle Stir-fried in Curry Favored Sauce with Bean Sprout,
+              | Chinese Napa, and Egg
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 140. Singapore Style Curry w/ Shrimp
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 141. Singapore Style Curry w/ Beef
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 142. Singapore Style Curry w/ Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 143. Singapore Style Curry w/ Pork
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 144. Singapore Style Curry w/ Vegetable
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 145. Singapore Style Curry w/ Combination
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $8.21
+          .menu-modal-category.menu-modal-taiwan
+            h3.menu-modal-subheader Taiwan Chow Mein Fun
+            p.menu-modal-info (Rice Noodle)
+            p.menu-modal-info
+              | Taiwan Chow Mai Fun Rice Noodle Stir-fried in Sauce with Bean
+              | Sprout, Chinese Napa, and Egg
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 146. Mai Fun Shrimp
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 147. Mai Fun Beef
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 198. Mai Fun Chicken
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 149. Mai Fun Pork
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 150. Mai Fun Vegetable
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 151. Mai Fun Combination
+              span.menu-modal-price $8.21
+          .menu-modal-category.menu-modal-chow-fun
+            h3.menu-modal-subheader Chow Fun Noodles
+            p.menu-modal-info (Hong Kong Style)
+            p.menu-modal-info
+              | with Bean Sprout and Chinese Napa
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 152. Chow Fun Noodle w/ Shrimp
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 153. Chow Fun Noodle w/ Beef
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 154. Chow Fun Noodle w/ Chicken
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 155. Chow Fun Noodle w/ Pork
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 156. Chow Fun Noodle w/ Vegetable
+              span.menu-modal-price $7.51
+            .menu-modal-item
+              p.menu-modal-name
+                | 157. Chow Fun Noodle w/ Combination
+              span.menu-modal-price $8.21
+          .menu-modal-category.menu-modal-special
+            h3.menu-modal-subheader Chef's Special
+            p.menu-modal-info (w/ Fried or Steamed Rice)
+            p.menu-modal-info (w/ Plain Lo Mein +$3.25)
+            p.menu-modal-info
+              | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75)
+            .menu-modal-item.topped
+              p.menu-modal-name
+                | 151. Kung Pao Triple Delight
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | With fresh chopped chicken, beef, shrimp, and diced celery &
+              | carrots with brown sauce and peanut on top.
+            .menu-modal-item
+              p.menu-modal-name
+                | 102. Golden Sesame Shrimp
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | Breaded shrimp deep fried with broccoli then cook with roasted
+              | sesame in brown sauce.
+            .menu-modal-item
+              p.menu-modal-name
+                | 103. Szechuan Express Dragon
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | White meat chicken, beef, shrimp, and pork with bean sprout,
+              | mushroom, boy-choy cook in ginger flavor.
+            .menu-modal-item
+              p.menu-modal-name
+                | 104. General Tso's Chicken
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | Boneless chicken chunks with broccoli cook in our chef's special
+              | sauce.
+            .menu-modal-item
+              p.menu-modal-name
+                | 105. Orange Flavored Chicken or Shrimp
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | Deep fried chicken chunks w/ imported tangerine peel cook in rich
+              | honey sauce.
+            .menu-modal-item
+              p.menu-modal-name
+                | 106. Tai Chi Chicken
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | Boneless chicken chunks marinated and vegetables in rich honey
+              | sauce.
+            .menu-modal-item
+              p.menu-modal-name
+                | 107. Crispy Shrimp
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | Breaded shrimp with broccoli cook in chef's special sauce.
+            .menu-modal-item
+              p.menu-modal-name
+                | 108. Szechuan Triple Delight
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | With chicken, shrimp, beef, green pepper, carrot, and onion.
+            .menu-modal-item
+              p.menu-modal-name
+                | 109. Quadruple Delight Hunan Style
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            p.menu-modal-item-info
+              | With chicken, shrimp, beef, pork, and vegetables.
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 110. Lemon Chicken
+              span.menu-modal-price $8.21
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 111. Steamed Tofu w/ Hunan Sauce
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+            .menu-modal-item
+              p.menu-modal-name
+                | 112. Pineapple Chicken
+              span.menu-modal-price $8.21
+            p.menu-modal-item-info
+              | White meat chicken, fresh pineapple, and vegetable with delicious
+              | sauce.
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 113. Chicken, Pork, Beef w/ Vegetable
+              span.menu-modal-price $8.21
+            .menu-modal-item.spaced
+              p.menu-modal-name
+                | 114. Shrimp w/ Lobster Sauce
+              span.menu-modal-price $8.21
+            .menu-modal-item
+              p.menu-modal-name
+                | 115. Sesame Chicken
+              span.menu-modal-price $8.21
+            p.menu-modal-item-info
+              | Breaded tender chicken with broccoli and roasted sesame in brown
+              | sauce.
+            .menu-modal-item
+              p.menu-modal-name
+                | 116. General Tso's Shrimp
+                span.menu-modal-name-spicy  🌶
+              span.menu-modal-price $7.98
+    script(src='https://unpkg.com/aos@2.3.1/dist/aos.js')
+    script.
+      AOS.init();
