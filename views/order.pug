@@ -491,7 +491,7 @@ html(lang='en')
     .payment-modal#pay-modal
         #stripe-form
             span.close(id='pay-close') &times;
-            form#payment-form(action='/order' method='post')
+            form#payment-form(action='/' method='post')
                 .form-row
                     .cc-text Name
                     input.card-name(type='text', size='30', maxlength='30', autocomplete='off' required)

@@ -14,14 +14,6 @@ const stripe = require("stripe")(stripeSecretKey);
 
 app.use(compression());
 
-app.use(function (req, res, next) {
-  if (req.secure || req.headers.host == "localhost:8080") {
-    next();
-  } else {
-    res.redirect("https://" + req.headers.host + req.url);
-  }
-});
-
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
@@ -32,10 +24,6 @@ app.enable("trust proxy");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.status(200).render("index");
-});
-
-app.get("/order", (req, res) => {
   fs.readFile(`menu.json`, (error, data) => {
     if (error) {
       res.status(500).end();
@@ -48,7 +36,7 @@ app.get("/order", (req, res) => {
   });
 });
 
-app.post("/order", function (req, res) {
+app.post("/", function (req, res) {
   let amount = req.body.amount * 100;
   amount = parseInt(amount);
 
