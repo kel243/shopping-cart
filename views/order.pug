@@ -1,14 +1,6 @@
 doctype html
 html(lang='en')
   head
-    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-162157542-2')
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-      dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-162157542-2");
     meta(http-equiv='content-type', content='text/html; charset=UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -66,14 +58,14 @@ html(lang='en')
                 p.itemInfo.itemInfo-spicy
                         | Red Items Are Spicy!
                 .itemsContainer
-                        each item in menu.specialMenu
-                            .itemBox(id=`s${item.id}`)
-                                if item.spicy
-                                    p.itemName.itemSpicy= `${item.id}. ${item.name}`
-                                else
-                                    p.itemName= `${item.id}. ${item.name}`
-                                each price in item.prices
-                                    p.itemPrice= price
+                    each item in menu[1]
+                        .itemBox(id=`s${item.id}`)
+                            if item.spicy
+                                p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                            else
+                                p.itemName= `${item.id}. ${item.name}`
+                            each price in item.prices
+                                p.itemPrice= price
     
     
     .ham__nav
@@ -125,7 +117,7 @@ html(lang='en')
                         h2.itemHeader
                             | Soups 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "soup"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -138,7 +130,7 @@ html(lang='en')
                         h2.itemHeader
                             | Appetizers
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "appetizers"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -157,7 +149,7 @@ html(lang='en')
                         p.itemInfo
                             | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "vegetables"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -176,7 +168,7 @@ html(lang='en')
                         p.itemInfo
                             | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "pork"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -195,7 +187,7 @@ html(lang='en')
                         p.itemInfo
                             | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "chicken"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -214,7 +206,7 @@ html(lang='en')
                         p.itemInfo
                             | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "beef"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -233,7 +225,7 @@ html(lang='en')
                         p.itemInfo
                             | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "seafood"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -246,7 +238,7 @@ html(lang='en')
                         h2.itemHeader
                             | Fried Rice
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "friedRice"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -259,7 +251,7 @@ html(lang='en')
                         h2.itemHeader
                             | Asian Pan Fried Noodles
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "friedNoodle"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -274,7 +266,7 @@ html(lang='en')
                         p.itemInfo
                             | (Soft Egg Noodle, Mei Fun Noodle, Thai Rice Noodle, or +$1 Chow Fun)
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "soupNoodle"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -287,7 +279,7 @@ html(lang='en')
                         h2.itemHeader
                             | Lo Mein
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "loMein"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -304,7 +296,7 @@ html(lang='en')
                         p.itemInfo
                             | Stir-fried in a Special Pad Thai Sauce with Bean Sprout, Fried Tofu, Peanuts, and Egg + Lemon on the Side 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "padThai"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -321,7 +313,7 @@ html(lang='en')
                         p.itemInfo
                             | Rice Noodle Stir-fried in Curry Favored Sauce with Bean Sprout, Chinese Napa, and Egg 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "singapore"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -338,7 +330,7 @@ html(lang='en')
                         p.itemInfo
                             | Taiwan Chow Mai Fun Rice Noodle Stir-fried in Sauce with Bean Sprout, Chinese Napa, and Egg  
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "maiFun"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -355,7 +347,7 @@ html(lang='en')
                         p.itemInfo
                             | Cooked with Bean Sprout and Chinese Napa  
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "chowFun"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -374,7 +366,7 @@ html(lang='en')
                         p.itemInfo
                             | (w/ Meat, Seafood Lo Mein, or Fried Rice +$3.75) 
                         .itemsContainer
-                            each item in menu.regularMenu
+                            each item in menu[0]
                                 if item.category == "chefSpecial"
                                     .itemBox(id=`r${item.id}`)
                                         if item.spicy
@@ -383,7 +375,7 @@ html(lang='en')
                                             p.itemName= `${item.id}. ${item.name}`
                                         each price in item.prices
                                             p.itemPrice= price
-    each item in menu.regularMenu
+    each item in menu[0]
         .itemModal(id=`r${item.id}-modal`)
             form.itemModal-box(id=`r${item.id}-form`)
                 span.close(id=`r${item.id}-close`) &times;
@@ -446,7 +438,7 @@ html(lang='en')
                 input(id=`r${item.id}-name` value=`${item.name}` type='hidden')
                 button.modalBtn(type='submit') Add to Cart
 
-    each item in menu.specialMenu
+    each item in menu[1]
         .itemModal(id=`s${item.id}-modal`)
             form.itemModal-box(id=`s${item.id}-form`)
                 span.close(id=`s${item.id}-close`) &times;
