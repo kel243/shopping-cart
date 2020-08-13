@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gotu", sans-serif;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(27, 27, 27);
+}
+
+.login {
+  &-form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    padding-top: 15vh;
+    text-align: center;
+  }
+
+  &-heading {
+    color: rgb(245, 245, 245);
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  &-label {
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+  }
+
+  &-input {
+    display: block;
+    margin: 0 auto 30px auto;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  &-button {
+    border: none;
+    font-size: 25px;
+    padding: 4px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: rgb(236, 0, 0);
+    color: rgb(245, 245, 245);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgb(230, 82, 82);
+    }
+  }
+}
