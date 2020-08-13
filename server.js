@@ -12,6 +12,7 @@ const User = require("./models/user");
 const viewsRoutes = require("./routes/viewRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const authRoutes = require("./routes/authRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 app.use(viewsRoutes);
 app.use(orderRoutes);
 app.use(authRoutes);
+app.use(productRoutes);
 
 // app.get("/sitemap.xml", (req, res) => {
 //   res.sendFile(__dirname + "/sitemap.xml");
