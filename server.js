@@ -56,6 +56,10 @@ app.get("*", function (req, res) {
   res.status(404).render("error");
 });
 
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+
 mongoose
   .connect(process.env.MONGODBURL, {
     useNewUrlParser: true,
