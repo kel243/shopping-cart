@@ -58,8 +58,6 @@ html(lang='en')
                             input.admin-products-input(type="text" name="id" value=`${item.id}`) 
                             label.admin-products-label(for="name") Name
                             input.admin-products-input(type="text" name="name" value=`${item.name}`) 
-                            label.admin-products-label(for="category") Category
-                            input.admin-products-input(type="text" name="category" value=`${item.category}`) 
                             label.admin-products-label(for="price") Prices
                             for price in item.prices
                                 input.admin-products-input(type="text" name="price" value=`${price}`) 
@@ -67,6 +65,6 @@ html(lang='en')
                                 input.admin-products-input(type="text" name="price" value=`${option}`) 
                             label.admin-products-label(for="spicy") Spicy
                             select.admin-products-input(name="spicy") 
-                                option(value=true selected= item.spicy === true) Spicy
-                                option(value=false selected= item.spicy === false) Not Spicy
+                                option(value='true' selected= item.spicy === true) Spicy
+                                option(value='false' selected= item.spicy === false) Not Spicy
                             button.admin-products-btn-edit(type="submit") Update
