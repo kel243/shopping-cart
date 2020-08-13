@@ -4,9 +4,11 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const compression = require("compression");
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const RegularItem = require("./models/regularItem");
 const SpecialItem = require("./models/specialItem");
+const User = require("./models/user");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
@@ -52,6 +54,10 @@ app.get("/", (req, res) => {
       });
     })
     .catch((err) => console.log(err));
+});
+
+app.get("/login", (req, res) => {
+  res.status(200).render("login");
 });
 
 app.post("/", function (req, res) {
