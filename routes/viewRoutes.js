@@ -11,4 +11,28 @@ router.get("/login", viewsController.getLogin);
 
 router.get("/admin", authController.protect, viewsController.getAdmin);
 
+router.get(
+  "/admin/products",
+  authController.protect,
+  viewsController.getAdminProducts
+);
+
+router.get(
+  "/admin/products/reg/:itemId",
+  authController.protect,
+  viewsController.getAdminRegProduct
+);
+
+router.get(
+  "/admin/products/spec/:itemId",
+  authController.protect,
+  viewsController.getAdminSpecProduct
+);
+
+router.get(
+  "/admin/orders",
+  authController.protect,
+  viewsController.getAdminOrders
+);
+
 module.exports = router;
