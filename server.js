@@ -6,16 +6,13 @@ const compression = require("compression");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const RegularItem = require("./models/regularItem");
-const SpecialItem = require("./models/specialItem");
 const User = require("./models/user");
+
+const viewsRoutes = require("./routes/viewRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
-
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
-const stripe = require("stripe")(stripeSecretKey);
 
 app.use(compression());
 
@@ -38,76 +35,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  const menu = [];
-  RegularItem.find()
-    .sort({ id: 1 })
-    .then((result) => {
-      menu[0] = result;
-      return SpecialItem.find().sort({ id: 1 });
-    })
-    .then((result) => {
-      menu[1] = result;
-      res.status(200).render("order", {
-        menu: menu,
-        stripePublicKey,
-      });
-    })
-    .catch((err) => console.log(err));
-});
-
-app.get("/login", (req, res) => {
-  res.status(200).render("login");
-});
-
-app.post("/", function (req, res) {
-  let amount = req.body.amount * 100;
-  amount = parseInt(amount);
-
-  stripe.charges
-    .create({
-      amount: amount,
-      source: req.body.stripeToken,
-      currency: "usd",
-      description: req.body.items,
-      statement_descriptor: "Szechuan Express Order",
-    })
-    .then(function () {
-      const menu = [];
-      RegularItem.find()
-        .sort({ id: 1 })
-        .then((result) => {
-          menu[0] = result;
-          return SpecialItem.find().sort({ id: 1 });
-        })
-        .then((result) => {
-          menu[1] = result;
-          res.status(200).render("order", {
-            menu: menu,
-            stripePublicKey,
-            result: "success",
-          });
-        })
-        .catch((err) => console.log(err));
-    })
-    .catch(function (err) {
-      const menu = [];
-      RegularItem.find()
-        .then((result) => {
-          menu[0] = result;
-          return SpecialItem.find().sort({ id: 1 });
-        })
-        .then((result) => {
-          menu[1] = result;
-          res.status(200).render("order", {
-            menu: menu,
-            stripePublicKey,
-            result: "failure",
-          });
-        })
-        .catch((err) => console.log(err));
-    });
-});
+app.use(viewsRoutes);
+app.use(orderRoutes);
 
 // app.get("/sitemap.xml", (req, res) => {
 //   res.sendFile(__dirname + "/sitemap.xml");
@@ -149,6 +78,28 @@ mongoose
     //     });
     //   }
     // });
+    User.find()
+      .then((result) => {
+        let user = result;
+        if (user.length < 1) {
+          bcrypt
+            .hash(process.env.password, 12)
+            .then((hashedPw) => {
+              user = new User({
+                username: "szechuanadmin",
+                password: hashedPw,
+              });
+              user
+                .save()
+                .then((result) => {
+                  console.log("User created!");
+                })
+                .catch((err) => console.log(err));
+            })
+            .catch((err) => console.log(err));
+        }
+      })
+      .catch((err) => console.log(err));
     app.listen(process.env.PORT || 8080, () => {
       console.log("Server is running...");
     });
