@@ -25,3 +25,7 @@ exports.getIndex = (req, res, next) => {
 exports.getLogin = (req, res, next) => {
   res.status(200).render("login");
 };
+
+exports.getAdmin = (req, res, next) => {
+  res.status(200).render("admin");
+};
