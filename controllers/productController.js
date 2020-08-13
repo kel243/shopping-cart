@@ -34,4 +34,19 @@ exports.postSpecItem = (req, res, next) => {
   const updatedPrices = req.body.price;
   const updatedSpice = req.body.spicy;
   const updatedOptions = req.body.options;
+
+  SpecialItem.findById(itemId)
+    .then((item) => {
+      item.id = updatedId;
+      item.name = updatedName;
+      item.prices = updatedPrices;
+      item.spicy = updatedSpice;
+      item.options = updatedOptions;
+
+      return item.save().then((result) => {
+        console.log("Item updated!");
+        res.redirect("/admin/products");
+      });
+    })
+    .catch((err) => console.log(err));
 };
