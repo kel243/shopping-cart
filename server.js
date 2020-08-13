@@ -65,13 +65,13 @@ mongoose
     //     console.log(error);
     //   } else {
     //     //console.log(JSON.parse(data).regularMenu);
-    //     JSON.parse(data).specialMenu.forEach((el) => {
-    //       const item = new SpecialItem({
+    //     JSON.parse(data).regularMenu.forEach((el) => {
+    //       const item = new RegularItem({
     //         id: el.id,
     //         name: el.name,
     //         prices: el.prices,
     //         spicy: el.spicy,
-    //         options: el.options,
+    //         description: el.desc,
     //       });
     //       item
     //         .save()
