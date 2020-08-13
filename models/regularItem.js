@@ -28,7 +28,6 @@ const regularSchema = new Schema({
   },
   description: {
     type: String,
-    default: "",
   },
 });
 
