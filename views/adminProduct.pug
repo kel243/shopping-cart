@@ -1,0 +1,41 @@
+html(lang='en')
+    head
+        meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='Online ordering for Szechuan Express in Pittsburgh.')
+        link(rel='canonical', href='https://szechuanexpresspgh.com/')
+        link(rel='stylesheet', type='text/css', href='/css/admin.min.css')
+        link(href='https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Gotu&display=swap', rel='stylesheet')
+        link(rel='icon', type='image/png', href='/img/logo.png')
+        title Szechuan Express | Admin Overview
+    body
+        .main
+            .dashboard
+                nav.admin-nav
+                    .admin-nav-container
+                        a.admin-nav-link(href="/admin") Overview
+                        a.admin-nav-link.admin-nav-link-active(href="/admin/products") Products
+                        a.admin-nav-link(href="/admin/orders") Orders
+                .admin-products-edit
+                    if type == 'regular'
+                        form.admin-products-form(action="")
+                            label.admin-products-label(for="id") ID
+                            input.admin-products-input(type="text" name="id" value=`${item.id}`) 
+                            label.admin-products-label(for="name") Name
+                            input.admin-products-input(type="text" name="name" value=`${item.name}`) 
+                            label.admin-products-label(for="category") Category
+                            input.admin-products-input(type="text" name="category" value=`${item.category}`) 
+                            label.admin-products-label(for="price") Prices
+                            for price in item.prices
+                                input.admin-products-input(type="text" name="price" value=`${price}`) 
+                            label.admin-products-label(for="spicy") Spicy
+                            select.admin-products-input(name="spicy") 
+                                if item.spicy
+                                    option(value='spicy' selected) Spicy
+                                    option(value='notSpicy') Not Spicy
+                                else
+                                    option(value='spicy') Spicy
+                                    option(value='notSpicy' selected) Not Spicy
+                            button.admin-products-btn-edit(type="submit") Update
