@@ -12,4 +12,9 @@ html(lang='en')
         title Szechuan Express | Admin Overview
     body
         .main
-            | Admin page
+            .dashboard
+                nav.admin-nav
+                    .admin-nav-container
+                        a.admin-nav-link.admin-nav-link-active(href="/admin") Overview
+                        a.admin-nav-link(href="/admin/products") Products
+                        a.admin-nav-link(href="/admin/orders") Orders
