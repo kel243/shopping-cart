@@ -17,6 +17,7 @@ html(lang='en')
   body(ontouchstart='')
     nav.navOrder
         a.navOrder-link(href='/') Home
+        a.navOrder-link(href='/login') Login
         .checkOut
             button.navOrder-cart#sc
                 svg.shoppingCart#sc(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24')
@@ -47,25 +48,26 @@ html(lang='en')
         button.menu-tab#regular Regular Menu
         button.menu-tab#special Special Menu
     .orderMenus#menu-special
-        .specialContainer
-            .mainContainer-special
-                p.itemInfo.itemInfo-boxed
-                    | This order method is for PICK-UP ONLY. <br/>
-                    | Order with Grubhub or Postmate for delivery. <br/>
-                    | Orders made outside of operating hours will be ignored and refunded as soon as possible. 
-                h2.itemHeader
-                        | Specials 
-                p.itemInfo.itemInfo-spicy
-                        | Red Items Are Spicy!
-                .itemsContainer
-                    each item in menu[1]
-                        .itemBox(id=`s${item.id}`)
-                            if item.spicy
-                                p.itemName.itemSpicy= `${item.id}. ${item.name}`
-                            else
-                                p.itemName= `${item.id}. ${item.name}`
-                            each price in item.prices
-                                p.itemPrice= price
+        if menu
+            .specialContainer
+                .mainContainer-special
+                    p.itemInfo.itemInfo-boxed
+                        | This order method is for PICK-UP ONLY. <br/>
+                        | Order with Grubhub or Postmate for delivery. <br/>
+                        | Orders made outside of operating hours will be ignored and refunded as soon as possible. 
+                    h2.itemHeader
+                            | Specials 
+                    p.itemInfo.itemInfo-spicy
+                            | Red Items Are Spicy!
+                    .itemsContainer
+                        each item in menu[1]
+                            .itemBox(id=`s${item.id}`)
+                                if item.spicy
+                                    p.itemName.itemSpicy= `${item.id}. ${item.name}`
+                                else
+                                    p.itemName= `${item.id}. ${item.name}`
+                                each price in item.prices
+                                    p.itemPrice= price
     
     
     .ham__nav
@@ -112,6 +114,7 @@ html(lang='en')
                     | Orders made outside of operating hours will be ignored and refunded as soon as possible.
                 p.itemInfo.itemInfo-spicy
                     | Red Items Are Spicy!
+              
                 .categoriesContainer
                     .categories#soups
                         h2.itemHeader

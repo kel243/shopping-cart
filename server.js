@@ -5,11 +5,13 @@ const bodyParser = require("body-parser");
 const compression = require("compression");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const cookieParser = require("cookie-parser");
 
 const User = require("./models/user");
 
 const viewsRoutes = require("./routes/viewRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
@@ -24,6 +26,7 @@ app.use(express.static(path.join(__dirname, "static")));
 app.enable("trust proxy");
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -37,6 +40,7 @@ app.use((req, res, next) => {
 
 app.use(viewsRoutes);
 app.use(orderRoutes);
+app.use(authRoutes);
 
 // app.get("/sitemap.xml", (req, res) => {
 //   res.sendFile(__dirname + "/sitemap.xml");
@@ -47,7 +51,7 @@ app.use(orderRoutes);
 // });
 
 app.get("*", function (req, res) {
-  res.status(404).render("order");
+  res.status(404).render("error");
 });
 
 mongoose
