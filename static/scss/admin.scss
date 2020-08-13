@@ -134,9 +134,17 @@ body {
       }
     }
 
+    &-edit {
+      height: calc(100% - 35px);
+      width: 100%;
+      overflow: auto;
+    }
+
     &-form {
       display: flex;
       flex-direction: column;
+
+      padding: 10px 0;
     }
 
     &-label {
@@ -145,10 +153,18 @@ body {
     }
 
     &-input {
-      width: 300px;
+      width: 350px;
       font-size: 25px;
       padding: 5px;
       margin: 5px auto;
+    }
+
+    &-desc {
+      width: 350px;
+      padding: 5px;
+      margin: 5px auto;
+      font-family: inherit;
+      resize: vertical;
     }
   }
 }

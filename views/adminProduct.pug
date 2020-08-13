@@ -38,4 +38,26 @@ html(lang='en')
                                 else
                                     option(value='spicy') Spicy
                                     option(value='notSpicy' selected) Not Spicy
+                            label.admin-products-label(for="description") Description
+                            textarea.admin-products-desc(name="description")= item.description
+                            button.admin-products-btn-edit(type="submit") Update
+                    else if type == 'special'
+                        form.admin-products-form(action="")
+                            label.admin-products-label(for="id") ID
+                            input.admin-products-input(type="text" name="id" value=`${item.id}`) 
+                            label.admin-products-label(for="name") Name
+                            input.admin-products-input(type="text" name="name" value=`${item.name}`) 
+                            label.admin-products-label(for="category") Category
+                            input.admin-products-input(type="text" name="category" value=`${item.category}`) 
+                            label.admin-products-label(for="price") Prices
+                            for price in item.prices
+                                input.admin-products-input(type="text" name="price" value=`${price}`) 
+                            label.admin-products-label(for="spicy") Spicy
+                            select.admin-products-input(name="spicy") 
+                                if item.spicy
+                                    option(value='spicy' selected) Spicy
+                                    option(value='notSpicy') Not Spicy
+                                else
+                                    option(value='spicy') Spicy
+                                    option(value='notSpicy' selected) Not Spicy
                             button.admin-products-btn-edit(type="submit") Update
