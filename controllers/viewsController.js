@@ -56,6 +56,7 @@ exports.getAdminRegProduct = (req, res, next) => {
       res.status(200).render("adminProduct", {
         item: result,
         type: "regular",
+        cat: result.category,
       });
     })
     .catch((err) => {

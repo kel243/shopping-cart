@@ -26,18 +26,30 @@ html(lang='en')
                             label.admin-products-label(for="name") Name
                             input.admin-products-input(type="text" name="name" value=`${item.name}`) 
                             label.admin-products-label(for="category") Category
-                            input.admin-products-input(type="text" name="category" value=`${item.category}`) 
+                            select.admin-products-input(name="category") 
+                                option(value='soup' selected= cat === 'soup') Soup
+                                option(value='appetizers' selected= cat === 'appetizers') Appetizers
+                                option(value='vegetables' selected= cat === 'vegetables') Vegetables
+                                option(value='pork' selected= cat === 'pork') Pork
+                                option(value='chicken' selected= cat === 'chicken') Chicken
+                                option(value='beef' selected= cat === 'beef') Beef
+                                option(value='seafood' selected= cat === 'seafood') Seafood
+                                option(value='friedRice' selected= cat === 'friedRice') Fried Rice
+                                option(value='friedNoodle' selected= cat === 'friedNoodle') Fried Noodle
+                                option(value='soupNoodle' selected= cat === 'soupNoodle') Soup Noodle
+                                option(value='loMein' selected= cat === 'loMein') Lo Mein
+                                option(value='padThai' selected= cat === 'padThai') Pad Thai
+                                option(value='singapore' selected= cat === 'singapore') Singapore Chow Mein Fun
+                                option(value='maiFun' selected= cat === 'maiFun') Taiwan Chow Mai Fun
+                                option(value='chowFun' selected= cat === 'chowFun') Chow Fun Noodles
+                                option(value='chefSpecial' selected= cat === 'chefSpecial') Chef Special
                             label.admin-products-label(for="price") Prices
                             for price in item.prices
                                 input.admin-products-input(type="text" name="price" value=`${price}`) 
                             label.admin-products-label(for="spicy") Spicy
                             select.admin-products-input(name="spicy") 
-                                if item.spicy
-                                    option(value='spicy' selected) Spicy
-                                    option(value='notSpicy') Not Spicy
-                                else
-                                    option(value='spicy') Spicy
-                                    option(value='notSpicy' selected) Not Spicy
+                                option(value='spicy' selected= item.spicy === true) Spicy
+                                option(value='notSpicy' selected= item.spicy === false) Not Spicy
                             label.admin-products-label(for="description") Description
                             textarea.admin-products-desc(name="description")= item.description
                             button.admin-products-btn-edit(type="submit") Update
@@ -52,12 +64,10 @@ html(lang='en')
                             label.admin-products-label(for="price") Prices
                             for price in item.prices
                                 input.admin-products-input(type="text" name="price" value=`${price}`) 
+                            for option in item.options
+                                input.admin-products-input(type="text" name="price" value=`${option}`) 
                             label.admin-products-label(for="spicy") Spicy
                             select.admin-products-input(name="spicy") 
-                                if item.spicy
-                                    option(value='spicy' selected) Spicy
-                                    option(value='notSpicy') Not Spicy
-                                else
-                                    option(value='spicy') Spicy
-                                    option(value='notSpicy' selected) Not Spicy
+                                option(value='spicy' selected= item.spicy === true) Spicy
+                                option(value='notSpicy' selected= item.spicy === false) Not Spicy
                             button.admin-products-btn-edit(type="submit") Update
