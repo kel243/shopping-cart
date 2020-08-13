@@ -18,15 +18,32 @@ html(lang='en')
                         a.admin-nav-link.admin-nav-link-active(href="/admin/products") Products
                         a.admin-nav-link(href="/admin/orders") Orders
                 .admin-products-main
-                    each item in menu[0]
-                        .admin-products-box
-                            p.admin-products-text= item.id
-                            p.admin-products-text= item.name
-                            p.admin-products-text= item.category
-                            p.admin-products-text= item.prices
-                            if item.spicy
-                                p.admin-products-text Spicy
-                            else 
-                                p.admin-products-text Not Spicy
-                            a.admin-products-btn(href=`/admin/products/reg/${item._id}`) Edit
+                    .admin-products-tab-nav
+                        button.admin-products-tab-btn#reg Regular
+                        button.admin-products-tab-btn#spec Special
+                    .admin-products-tab#reg-tab
+                        each item in menu[0]
+                            .admin-products-box
+                                p.admin-products-text= item.id
+                                p.admin-products-text= item.name
+                                p.admin-products-text= item.category
+                                p.admin-products-text= item.prices
+                                if item.spicy
+                                    p.admin-products-text Spicy
+                                else 
+                                    p.admin-products-text Not Spicy
+                                a.admin-products-btn(href=`/admin/products/reg/${item._id}`) Edit
+                    .admin-products-tab#spec-tab
+                        each item in menu[1]
+                            .admin-products-box
+                                p.admin-products-text= item.id
+                                p.admin-products-text= item.name
+                                p.admin-products-text= item.prices
+                                if item.spicy
+                                    p.admin-products-text Spicy
+                                else 
+                                    p.admin-products-text Not Spicy
+                                p.admin-products-text= item.options
+                                a.admin-products-btn(href=`/admin/products/spec/${item._id}`) Edit
                     .admin-products-bottom
+        script(src='/js/adminPage.js')
