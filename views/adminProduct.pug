@@ -19,7 +19,7 @@ html(lang='en')
                         a.admin-nav-link(href="/admin/orders") Orders
                 .admin-products-edit
                     if type == 'regular'
-                        form.admin-products-form(action="")
+                        form.admin-products-form(action=`/admin/products/reg/${item._id}` method="post")
                             label.admin-products-label(for="id") ID
                             input.admin-products-input(type="text" name="id" value=`${item.id}`) 
                             label.admin-products-label(for="name") Name
@@ -47,13 +47,13 @@ html(lang='en')
                                 input.admin-products-input(type="text" name="price" value=`${price}`) 
                             label.admin-products-label(for="spicy") Spicy
                             select.admin-products-input(name="spicy") 
-                                option(value='spicy' selected= item.spicy === true) Spicy
-                                option(value='notSpicy' selected= item.spicy === false) Not Spicy
+                                option(value='true' selected= item.spicy === true) Spicy
+                                option(value='false' selected= item.spicy === false) Not Spicy
                             label.admin-products-label(for="description") Description
                             textarea.admin-products-desc(name="description")= item.description
                             button.admin-products-btn-edit(type="submit") Update
                     else if type == 'special'
-                        form.admin-products-form(action="")
+                        form.admin-products-form(action=`/admin/products/spec/${item._id}` method="post")
                             label.admin-products-label(for="id") ID
                             input.admin-products-input(type="text" name="id" value=`${item.id}`) 
                             label.admin-products-label(for="name") Name
@@ -67,6 +67,6 @@ html(lang='en')
                                 input.admin-products-input(type="text" name="price" value=`${option}`) 
                             label.admin-products-label(for="spicy") Spicy
                             select.admin-products-input(name="spicy") 
-                                option(value='spicy' selected= item.spicy === true) Spicy
-                                option(value='notSpicy' selected= item.spicy === false) Not Spicy
+                                option(value=true selected= item.spicy === true) Spicy
+                                option(value=false selected= item.spicy === false) Not Spicy
                             button.admin-products-btn-edit(type="submit") Update
