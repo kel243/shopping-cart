@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const fs = require("fs");
 const bodyParser = require("body-parser");
 const compression = require("compression");
+const mongoose = require("mongoose");
+
+const RegularItem = require("./models/regularItem");
+const SpecialItem = require("./models/specialItem");
 
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
@@ -23,17 +26,32 @@ app.enable("trust proxy");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
 app.get("/", (req, res) => {
-  fs.readFile(`menu.json`, (error, data) => {
-    if (error) {
-      res.status(500).end();
-    } else {
+  const menu = [];
+  RegularItem.find()
+    .sort({ id: 1 })
+    .then((result) => {
+      menu[0] = result;
+      return SpecialItem.find().sort({ id: 1 });
+    })
+    .then((result) => {
+      menu[1] = result;
       res.status(200).render("order", {
-        menu: JSON.parse(data),
+        menu: menu,
         stripePublicKey,
       });
-    }
-  });
+    })
+    .catch((err) => console.log(err));
 });
 
 app.post("/", function (req, res) {
@@ -49,32 +67,39 @@ app.post("/", function (req, res) {
       statement_descriptor: "Szechuan Express Order",
     })
     .then(function () {
-      fs.readFile(`menu.json`, (error, data) => {
-        if (error) {
-          res.status(500).end();
-        } else {
+      const menu = [];
+      RegularItem.find()
+        .sort({ id: 1 })
+        .then((result) => {
+          menu[0] = result;
+          return SpecialItem.find().sort({ id: 1 });
+        })
+        .then((result) => {
+          menu[1] = result;
           res.status(200).render("order", {
-            menu: JSON.parse(data),
+            menu: menu,
             stripePublicKey,
             result: "success",
           });
-        }
-      });
+        })
+        .catch((err) => console.log(err));
     })
     .catch(function (err) {
-      console.log(err);
-      fs.readFile(`menu.json`, (error, data) => {
-        if (error) {
-          console.log(error);
-          res.status(500).end();
-        } else {
+      const menu = [];
+      RegularItem.find()
+        .then((result) => {
+          menu[0] = result;
+          return SpecialItem.find().sort({ id: 1 });
+        })
+        .then((result) => {
+          menu[1] = result;
           res.status(200).render("order", {
-            menu: JSON.parse(data),
+            menu: menu,
             stripePublicKey,
             result: "failure",
           });
-        }
-      });
+        })
+        .catch((err) => console.log(err));
     });
 });
 
@@ -87,9 +112,41 @@ app.post("/", function (req, res) {
 // });
 
 app.get("*", function (req, res) {
-  res.status(404).render("index");
+  res.status(404).render("order");
 });
 
-app.listen(process.env.PORT || 8080, () => {
-  console.log("Server is running...");
-});
+mongoose
+  .connect(process.env.MONGODBURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then((result) => {
+    // fs.readFile(`menu.json`, (error, data) => {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     //console.log(JSON.parse(data).regularMenu);
+    //     JSON.parse(data).specialMenu.forEach((el) => {
+    //       const item = new SpecialItem({
+    //         id: el.id,
+    //         name: el.name,
+    //         prices: el.prices,
+    //         spicy: el.spicy,
+    //         options: el.options,
+    //       });
+    //       item
+    //         .save()
+    //         .then((result) => {
+    //           console.log("success!");
+    //         })
+    //         .catch((err) => console.log(err));
+    //     });
+    //   }
+    // });
+    app.listen(process.env.PORT || 8080, () => {
+      console.log("Server is running...");
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
