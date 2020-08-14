@@ -18,6 +18,7 @@ html(lang='en')
                         a.admin-nav-link.admin-nav-link-active(href="/admin/products") Products
                         a.admin-nav-link(href="/admin/orders") Orders
                 .admin-products-edit
+                    a.admin-products-back(href="/admin/products") < Back
                     if type == 'regular'
                         form.admin-products-form(action=`/admin/products/reg/${item._id}` method="post")
                             label.admin-products-label(for="id") ID

@@ -71,6 +71,26 @@ body {
       overflow: scroll;
     }
 
+    &-back {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      color: red;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 20px;
+
+      &:link,
+      &:visited {
+        color: red;
+      }
+
+      &:hover,
+      &:active {
+        color: rgb(211, 0, 0);
+      }
+    }
+
     &-tab {
       display: flex;
       flex-wrap: wrap;
@@ -105,7 +125,7 @@ body {
     }
 
     &-box {
-      border: 1px solid black;
+      border: 1px solid rgb(88, 88, 88);
       width: 220px;
       height: 300px;
       margin-bottom: 10px;
@@ -114,6 +134,12 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      background-color: transparent;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: white;
+      }
     }
 
     &-bottom {
@@ -128,6 +154,8 @@ body {
       background-color: rgb(236, 0, 0);
       border-radius: 5px;
       transition: all 0.2s ease;
+      width: 100px;
+      margin: 0 auto;
 
       &:link,
       &:visited {
@@ -136,7 +164,7 @@ body {
 
       &:hover,
       &:active {
-        background-color: rgb(230, 82, 82);
+        background-color: rgb(211, 0, 0);
       }
 
       &-active {
@@ -158,7 +186,7 @@ body {
 
         &:hover,
         &:active {
-          background-color: rgb(230, 82, 82);
+          background-color: rgb(211, 0, 0);
         }
       }
     }
@@ -167,6 +195,7 @@ body {
       height: calc(100% - 35px);
       width: 100%;
       overflow: auto;
+      position: relative;
     }
 
     &-form {
