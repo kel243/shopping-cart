@@ -6,3 +6,5 @@ Interactive, responsive menu page built with Javascript, HTML, SCSS, Node.js, Ex
 The menu items are dynamically generated in Pug using data from a json file. Users can click on items to choose the items' respective options and add the item to the cart.
 
 Users can also remove items from the cart and checkout with their card. The checkout is handled by Stripe. 
+
+Admins can login and edit the items on the menus. 
