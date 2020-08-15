@@ -490,6 +490,7 @@ html(lang='en')
         #stripe-form
             span.close(id='pay-close') &times;
             form#payment-form(action='/' method='post')
+                p.form-error
                 .form-row
                     .cc-text Name
                     input.card-name(type='text', size='30', maxlength='30', autocomplete='off' required)
@@ -510,5 +511,5 @@ html(lang='en')
     #success.hidden Thanks for ordering with us!
     footer.footer
       | © Szechuan Express 2020
-    script(src='/js/orderPage.js')
+    script(src='/js/orderBundle.js')
     
