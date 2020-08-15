@@ -12,10 +12,11 @@ html(lang='en')
         title Szechuan Express | Admin Login
     body
         .main
-            form.login-form(method='POST' action="/login")
+            form.login-form
                 h1.login-heading Admin Login
                 label.login-label(for="username") Username
-                input.login-input(type="text" name="username" required)
+                input.login-input(type="text" name="username" id="username" required)
                 label.login-label(for="password") Password
-                input.login-input(type="password" name="password" required)
+                input.login-input(type="password" name="password" id="password" required)
                 button.login-button(type="submit") Login
+        script(src='/js/bundle.js')
