@@ -8,6 +8,8 @@ const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
 
 const User = require("./models/user");
+const AppError = require("./utils/appError");
+const globalErrorHandler = require("./controllers/errorController");
 
 const viewsRoutes = require("./routes/viewRoutes");
 const orderRoutes = require("./routes/orderRoutes");
@@ -26,7 +28,12 @@ app.use(express.static(path.join(__dirname, "static")));
 
 app.enable("trust proxy");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use((req, res, next) => {
@@ -52,9 +59,11 @@ app.use(productRoutes);
 //   res.sendFile(__dirname + "/robots.txt");
 // });
 
-app.get("*", function (req, res) {
-  res.status(404).render("error");
+app.all("*", (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl}!`, 404));
 });
+
+app.use(globalErrorHandler);
 
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
