@@ -17,7 +17,10 @@ html(lang='en')
   body(ontouchstart='')
     nav.navOrder
         a.navOrder-link(href='/') Home
-        a.navOrder-link(href='/login') Login
+        if user
+            a.navOrder-link(href='/admin') Admin
+        else
+            a.navOrder-link(href='/login') Login
         .checkOut
             button.navOrder-cart#sc
                 svg.shoppingCart#sc(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewBox='0 0 24 24')
