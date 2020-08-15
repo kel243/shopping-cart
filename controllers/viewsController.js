@@ -1,6 +1,22 @@
 const RegularItem = require("../models/regularItem");
 const SpecialItem = require("../models/specialItem");
+const Order = require("../models/order");
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
+
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 exports.getIndex = (req, res, next) => {
   const menu = [];
@@ -81,5 +97,16 @@ exports.getAdminSpecProduct = (req, res, next) => {
 };
 
 exports.getAdminOrders = (req, res, next) => {
-  res.status(200).render("adminOrders");
+  Order.find()
+    .sort({ time: -1 })
+    .then((orders) => {
+      res.status(200).render("adminOrders", {
+        orders: orders,
+        months: months,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).render("error");
+    });
 };

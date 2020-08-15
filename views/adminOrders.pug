@@ -17,3 +17,37 @@ html(lang='en')
                         a.admin-nav-link(href="/admin") Overview
                         a.admin-nav-link(href="/admin/products") Products
                         a.admin-nav-link.admin-nav-link-active(href="/admin/orders") Orders
+                .admin-orders-main
+                    .admin-products-tab-nav
+                        button.admin-products-tab-btn#incomplete Incomplete
+                        button.admin-products-tab-btn#completed Completed
+                    .admin-products-tab#incomplete-tab
+                        for order in orders
+                            if !order.completed
+                                .admin-orders-box
+                                    .admin-orders-header
+                                        p.admin-orders-text#customer= `Customer: ${order.customer}`
+                                        p.admin-orders-text= `${months[order.time.getMonth()]} ${order.time.getDate()}, ${order.time.getFullYear()}` 
+                                        p.admin-orders-text#time= `${(order.time.getHours() + 1 < 12) ? ('0' + (order.time.getHours() + 1)).slice('-2') : ('0' + (order.time.getHours() - 11)).slice('-2')}:${('0' + (order.time.getMinutes() + 1)).slice('-2')}:${('0' + (order.time.getSeconds() + 1)).slice('-2')}${(order.time.getHours() + 1) > 11 ? 'pm' : 'am'}` 
+                                    .admin-orders-items
+                                        for item in order.items
+                                            p.admin-orders-text= `${item.name}`
+                                    p.admin-orders-text#total= `Total: $${order.total}`
+                                    form(action=`/admin/orders/${order._id}` method='post')
+                                        button.admin-orders-btn Complete
+                    .admin-products-tab#completed-tab
+                        for order in orders
+                            if order.completed
+                                .admin-orders-box
+                                    .admin-orders-header
+                                        p.admin-orders-text#customer= `Customer: ${order.customer}`
+                                        p.admin-orders-text= `${months[order.time.getMonth()]} ${order.time.getDate()}, ${order.time.getFullYear()}` 
+                                        p.admin-orders-text#time= `${(order.time.getHours() + 1 < 12) ? ('0' + (order.time.getHours() + 1)).slice('-2') : ('0' + (order.time.getHours() - 11)).slice('-2')}:${('0' + (order.time.getMinutes() + 1)).slice('-2')}:${('0' + (order.time.getSeconds() + 1)).slice('-2')}${(order.time.getHours() + 1) > 11 ? 'pm' : 'am'}` 
+                                    .admin-orders-items
+                                        for item in order.items
+                                            p.admin-orders-text= `${item.name}`
+                                    p.admin-orders-text#total= `Total: $${order.total}`
+                                    form(action=`/admin/orders/${order._id}` method='post')
+                                        button.admin-orders-btn Undo
+        script(src='/js/adminPage.js')
+                            

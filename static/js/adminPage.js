@@ -28,4 +28,6 @@ if (adminTabs) {
   }
 
   if (document.getElementById("reg")) document.getElementById("reg").click();
+  if (document.getElementById("incomplete"))
+    document.getElementById("incomplete").click();
 }
