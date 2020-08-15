@@ -45,3 +45,17 @@ exports.postOrder = (req, res, next) => {
       });
     });
 };
+
+exports.completeOrder = (req, res, next) => {
+  const orderId = req.params.orderId;
+  Order.findById(orderId)
+    .then((order) => {
+      order.completed = !order.completed;
+
+      return order.save();
+    })
+    .then((result) => {
+      res.redirect("/admin/orders");
+    })
+    .catch((err) => console.log(err));
+};
