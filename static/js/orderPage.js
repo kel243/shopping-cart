@@ -1,3 +1,4 @@
+import axios from "axios";
 const stripePublicKey = document.getElementById("publicKey").value;
 const stripe = Stripe("pk_test_RaH2Cdy11oghW04JmLnpOzrD008SXm6Eah");
 const elements = stripe.elements();
@@ -279,36 +280,37 @@ const card = elements.create("card", { style: style });
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount("#card-element");
 
-const stripeTokenHandler = (token) => {
-  const hiddenInput = document.createElement("input");
-  hiddenInput.setAttribute("type", "hidden");
-  hiddenInput.setAttribute("name", "stripeToken");
-  hiddenInput.setAttribute("value", token.id);
-  paymentForm.appendChild(hiddenInput);
-
-  const itemsInput = document.createElement("input");
-
-  let itemsList = "";
-
-  itemStorage = JSON.parse(localStorage.getItem("items"));
-
-  itemStorage.map((item) => (itemsList = itemsList + item.name + "; "));
-
-  itemsInput.setAttribute("type", "hidden");
-  itemsInput.setAttribute("name", "items");
-  itemsInput.setAttribute("value", itemsList);
-  paymentForm.appendChild(itemsInput);
+const stripeTokenHandler = async (token) => {
+  const itemsList = JSON.parse(localStorage.getItem("items"));
+  const errorMsg = document.querySelector(".form-error");
 
   // Submit the form
-  paymentForm.submit();
+  try {
+    const res = await axios({
+      method: "POST",
+      url: "/order",
+      data: {
+        stripeToken: token.id,
+        items: itemsList,
+        name: document.querySelector(".card-name").value,
+        amount: document.querySelector("#cc-amount").value,
+      },
+    });
 
-  // Remove items from storage and shopping cart and reset all dues
-  resetAll();
+    if (res.data.status === "success") {
+      resetAll();
+      location.assign("/");
+    } else {
+      errorMsg.innerHTML = res.data.message;
+    }
+  } catch (err) {
+    errorMsg.innerHTML = err;
+  }
 };
-
 const paymentSubmitHandler = (event) => {
   event.preventDefault();
   checkoutBtn.disabled = true;
+  const errorMsg = document.querySelector(".form-error");
 
   const cardName = document.querySelector(".card-name").value;
 
@@ -319,7 +321,7 @@ const paymentSubmitHandler = (event) => {
     .then((result) => {
       if (result.error) {
         // Inform the customer that there was an error.
-        console.log(result.error);
+        errorMsg.innerHTML = result.error;
       } else {
         // Send the token to your server.
         stripeTokenHandler(result.token);
