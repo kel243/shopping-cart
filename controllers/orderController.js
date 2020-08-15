@@ -1,52 +1,47 @@
+const dotenv = require("dotenv").config();
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-const stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 const stripe = require("stripe")(stripeSecretKey);
 
+const Order = require("../models/order");
+
 exports.postOrder = (req, res, next) => {
+  const items = [];
   let amount = req.body.amount * 100;
   amount = parseInt(amount);
+
+  req.body.items.forEach((item) => {
+    items.push({
+      name: item.name,
+      price: item.price,
+    });
+  });
 
   stripe.charges
     .create({
       amount: amount,
       source: req.body.stripeToken,
       currency: "usd",
-      description: req.body.items,
+      description: "Order from Szechuan Express",
       statement_descriptor: "Szechuan Express Order",
     })
     .then(function () {
-      const menu = [];
-      RegularItem.find()
-        .sort({ id: 1 })
-        .then((result) => {
-          menu[0] = result;
-          return SpecialItem.find().sort({ id: 1 });
-        })
-        .then((result) => {
-          menu[1] = result;
-          res.status(200).render("order", {
-            menu: menu,
-            stripePublicKey,
-            result: "success",
-          });
-        })
-        .catch((err) => console.log(err));
+      const newOrder = new Order({
+        customer: req.body.name,
+        items: items,
+        total: req.body.amount,
+      });
+      return newOrder.save();
     })
-    .catch(function (err) {
-      const menu = [];
-      RegularItem.find()
-        .then((result) => {
-          menu[0] = result;
-          return SpecialItem.find().sort({ id: 1 });
-        })
-        .then((result) => {
-          menu[1] = result;
-          res.status(200).render("order", {
-            menu: menu,
-            stripePublicKey,
-            result: "failure",
-          });
-        })
-        .catch((err) => console.log(err));
+    .then((result) => {
+      console.log("New order created!");
+      res.json({
+        status: "success",
+      });
+    })
+    .catch((err) => {
+      res.json({
+        status: "failure",
+        message: err.raw.message,
+      });
     });
 };
