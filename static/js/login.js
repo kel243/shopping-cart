@@ -25,9 +25,11 @@ const login = async (username, password) => {
   }
 };
 
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  login(username, password);
-});
+if (loginForm) {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    login(username, password);
+  });
+}
