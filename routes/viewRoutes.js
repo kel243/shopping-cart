@@ -5,9 +5,9 @@ const router = express.Router();
 const viewsController = require("../controllers/viewsController");
 const authController = require("../controllers/authController");
 
-router.get("/", viewsController.getIndex);
+router.get("/", authController.isLoggedIn, viewsController.getIndex);
 
-router.get("/login", viewsController.getLogin);
+router.get("/login", authController.alreadyLoggedIn, viewsController.getLogin);
 
 router.get("/admin", authController.protect, viewsController.getAdmin);
 
