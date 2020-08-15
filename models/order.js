@@ -24,6 +24,10 @@ const orderSchema = new Schema({
     required: true,
   },
   time: { type: Date, default: Date.now },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Order", orderSchema);
