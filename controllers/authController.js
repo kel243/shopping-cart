@@ -27,8 +27,6 @@ const createSendToken = (user, statusCode, req, res) => {
 
   user.password = undefined;
 
-  console.log("fired");
-
   res.status(statusCode).json({
     status: "success",
     token,

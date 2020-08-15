@@ -1,5 +1,4 @@
 const openTabAdmin = (event) => {
-  console.log("fired");
   let i, tabcontent, tablinks;
   const tabName = event.target.id;
 
