@@ -225,9 +225,11 @@ body {
   &-orders {
     &-main {
       display: flex;
+      height: 100%;
+      width: 100%;
       flex-direction: column;
       padding: 0 5px;
-      overflow: auto;
+      overflow: scroll;
     }
 
     &-box {
@@ -258,7 +260,16 @@ body {
     &-items {
       display: flex;
       justify-content: space-evenly;
-      padding: 10px 0;
+      padding: 10px 3px;
+      flex-wrap: wrap;
+
+      & p {
+        font-size: 18px;
+        margin-bottom: 5px;
+        padding: 3px 5px;
+        border-radius: 3px;
+        border: 1px solid rgb(173, 173, 173);
+      }
     }
 
     &-btn {
