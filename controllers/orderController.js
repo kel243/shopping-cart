@@ -51,7 +51,6 @@ exports.completeOrder = (req, res, next) => {
   Order.findById(orderId)
     .then((order) => {
       order.completed = !order.completed;
-
       return order.save();
     })
     .then((result) => {
