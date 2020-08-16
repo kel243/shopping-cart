@@ -75,54 +75,60 @@ mongoose
     useUnifiedTopology: true,
   })
   .then((result) => {
-    // fs.readFile(`menu.json`, (error, data) => {
-    //   if (error) {
-    //     console.log(error);
-    //   } else {
-    //     //console.log(JSON.parse(data).regularMenu);
-    //     JSON.parse(data).regularMenu.forEach((el) => {
-    //       const item = new RegularItem({
-    //         id: el.id,
-    //         name: el.name,
-    //         prices: el.prices,
-    //         spicy: el.spicy,
-    //         description: el.desc,
-    //       });
-    //       item
-    //         .save()
-    //         .then((result) => {
-    //           console.log("success!");
-    //         })
-    //         .catch((err) => console.log(err));
-    //     });
-    //   }
-    // });
-    User.find()
-      .then((result) => {
-        let user = result;
-        if (user.length < 1) {
-          bcrypt
-            .hash(process.env.password, 12)
-            .then((hashedPw) => {
-              user = new User({
-                username: "szechuanadmin",
-                password: hashedPw,
-              });
-              user
-                .save()
-                .then((result) => {
-                  console.log("User created!");
-                })
-                .catch((err) => console.log(err));
-            })
-            .catch((err) => console.log(err));
-        }
-      })
-      .catch((err) => console.log(err));
-    app.listen(process.env.PORT || 8080, () => {
+    const server = app.listen(process.env.PORT || 8080, () => {
       console.log("Server is running...");
+    });
+    const io = require("./socket").init(server);
+    io.on("connect", (socket) => {
+      console.log("Client connected");
     });
   })
   .catch((err) => {
     console.log(err);
   });
+
+// fs.readFile(`menu.json`, (error, data) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     //console.log(JSON.parse(data).regularMenu);
+//     JSON.parse(data).regularMenu.forEach((el) => {
+//       const item = new RegularItem({
+//         id: el.id,
+//         name: el.name,
+//         prices: el.prices,
+//         spicy: el.spicy,
+//         description: el.desc,
+//       });
+//       item
+//         .save()
+//         .then((result) => {
+//           console.log("success!");
+//         })
+//         .catch((err) => console.log(err));
+//     });
+//   }
+// });
+
+// User.find()
+//   .then((result) => {
+//     let user = result;
+//     if (user.length < 1) {
+//       bcrypt
+//         .hash(process.env.password, 12)
+//         .then((hashedPw) => {
+//           user = new User({
+//             username: "szechuanadmin",
+//             password: hashedPw,
+//           });
+//           user
+//             .save()
+//             .then((result) => {
+//               console.log("User created!");
+//             })
+//             .catch((err) => console.log(err));
+//         })
+//         .catch((err) => console.log(err));
+//     }
+//   })
+//   .catch((err) => console.log(err));
