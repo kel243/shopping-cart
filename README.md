@@ -7,4 +7,6 @@ The menu items are dynamically generated in Pug using data from a json file. Use
 
 Users can also remove items from the cart and checkout with their card. The checkout is handled by Stripe. 
 
+When valid orders are created, it is rendered on the admin orders page using socket.io.
+
 Admins can login and edit the items on the menus. 
