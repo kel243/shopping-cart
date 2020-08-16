@@ -2,7 +2,27 @@ const dotenv = require("dotenv").config();
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 const stripe = require("stripe")(stripeSecretKey);
 
+const io = require("../socket");
+
 const Order = require("../models/order");
+
+const formatDate = (date) => {
+  let hour = date.getHours() + 1;
+  if (hour < 12) {
+    hour = ("0" + hour).slice(-2);
+  } else {
+    hour = ("0" + (hour - 12)).slice(-2);
+  }
+
+  return {
+    month: date.getMonth() + 1,
+    date: date.getDate(),
+    year: date.getFullYear(),
+    hour: hour,
+    minute: ("0" + (date.getMinutes() + 1)).slice("-2"),
+    second: ("0" + (date.getSeconds() + 1)).slice("-2"),
+  };
+};
 
 exports.postOrder = (req, res, next) => {
   const items = [];
@@ -33,16 +53,22 @@ exports.postOrder = (req, res, next) => {
       return newOrder.save();
     })
     .then((result) => {
+      io.getIO().emit("new-order", {
+        order: result,
+        date: formatDate(result.time),
+      });
       console.log("New order created!");
       res.json({
         status: "success",
       });
     })
     .catch((err) => {
-      res.json({
-        status: "failure",
-        message: err.raw.message,
-      });
+      if (err.raw) {
+        res.json({
+          status: "failure",
+          message: err.raw.message,
+        });
+      }
     });
 };
 
