@@ -142,9 +142,9 @@ const addToCart = (event) => {
         name += " with Chow Fun";
         cost += 1.0;
       } else if (options[i].value == "panFried") {
-        name = name.replace("Pan Fried or Steamed", "Pan Fried");
-      } else if (options[i].value == "steamed") {
-        name = name.replace("Pan Fried or Steamed", "Steamed");
+        name = name.replace("Fried or Steamed", "Pan Fried");
+      } else if (options[i].value == "Steamed") {
+        name = name.replace("Fried or Steamed", "Steamed");
       }
     }
   }
