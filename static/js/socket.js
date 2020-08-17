@@ -45,7 +45,9 @@ socket.on("new-order", (data) => {
   <div class='admin-orders-items'>
   ${itemList}
   </div>
-  <p class="admin-orders-text" id="total">Total: $${data.order.total}</p>
+  <p class="admin-orders-text" id="total">Total: $${data.order.total.toFixed(
+    2
+  )}</p>
   <form action='/admin/orders/${data.order._id}' method='post'>
   <button class='admin-orders-btn'>Complete</button>
   </form>

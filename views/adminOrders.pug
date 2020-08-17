@@ -32,7 +32,7 @@ html(lang='en')
                                     .admin-orders-items
                                         for item in order.items
                                             p.admin-orders-text= `${item.name}`
-                                    p.admin-orders-text#total= `Total: $${order.total}`
+                                    p.admin-orders-text#total= `Total: $${order.total.toFixed(2)}`
                                     form(action=`/admin/orders/${order._id}` method='post')
                                         button.admin-orders-btn Complete
                     .admin-products-tab#completed-tab
@@ -46,7 +46,7 @@ html(lang='en')
                                     .admin-orders-items
                                         for item in order.items
                                             p.admin-orders-text= `${item.name}`
-                                    p.admin-orders-text#total= `Total: $${order.total}`
+                                    p.admin-orders-text#total= `Total: $${order.total.toFixed(2)}`
                                     form(action=`/admin/orders/${order._id}` method='post')
                                         button.admin-orders-btn Undo
         script(src='/js/adminPage.js')
