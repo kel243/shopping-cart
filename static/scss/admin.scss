@@ -289,6 +289,49 @@ body {
       }
     }
   }
+
+  &-overview {
+    &-main {
+      height: calc(100% - 45px);
+      width: 100%;
+      overflow: auto;
+    }
+
+    &-subheading {
+      background-color: #ec0000;
+      color: rgb(245, 245, 245);
+    }
+
+    &-container {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: calc(100% - 90px);
+      justify-content: space-evenly;
+    }
+
+    &-box {
+      width: 100%;
+      max-width: 500px;
+      padding-bottom: 10px;
+      border: 2px solid #ec0000;
+      border-radius: 5px;
+      margin: 0 20px 20px 20px;
+
+      @media only screen and (max-width: 1050px) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    &-text {
+      font-size: 25px;
+
+      &-header {
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
 #total {

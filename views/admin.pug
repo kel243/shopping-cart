@@ -17,3 +17,25 @@ html(lang='en')
                         a.admin-nav-link.admin-nav-link-active(href="/admin") Overview
                         a.admin-nav-link(href="/admin/products") Products
                         a.admin-nav-link(href="/admin/orders") Orders
+                .admin-overview-main
+                    h1.admin-overview-heading Szechuan Express Admin
+                    .admin-overview-container
+                        .admin-overview-box
+                            h2.admin-overview-subheading Past 24 Hours
+                            p.admin-overview-text.admin-overview-text-header Orders:
+                            p.admin-overview-text= todayOrdersCount
+                            p.admin-overview-text.admin-overview-text-header Revenue:
+                            p.admin-overview-text= `$${todayTotal}`
+                        .admin-overview-box
+                            h2.admin-overview-subheading Past 7 Days
+                            p.admin-overview-text.admin-overview-text-header Orders:
+                            p.admin-overview-text= weekOrdersCount
+                            p.admin-overview-text.admin-overview-text-header Revenue:
+                            p.admin-overview-text= `$${weekTotal}`
+                        .admin-overview-box
+                            h2.admin-overview-subheading Past 30 Days
+                            p.admin-overview-text.admin-overview-text-header Orders:
+                            p.admin-overview-text= monthOrdersCount
+                            p.admin-overview-text.admin-overview-text-header Revenue:
+                            p.admin-overview-text= `$${monthTotal}`
+                        

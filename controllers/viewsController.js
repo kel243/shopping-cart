@@ -62,7 +62,59 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.getAdmin = (req, res, next) => {
-  res.status(200).render("admin");
+  let todayOrdersCount = 0;
+  let todayTotal = 0;
+  let weekOrdersCount = 0;
+  let weekTotal = 0;
+  let monthOrdersCount = 0;
+  let monthTotal = 0;
+  Order.find({ time: { $gt: new Date(Date.now() - 24 * 60 * 60 * 1000) } })
+    .then((orders) => {
+      todayOrdersCount = orders.length;
+      todayTotal = orders.reduce((acc, curr) => {
+        return acc + curr.total;
+      }, 0);
+
+      Order.find({
+        time: { $gt: new Date(Date.now() - 24 * 60 * 60 * 1000 * 7) },
+      })
+        .then((orders) => {
+          weekOrdersCount = orders.length;
+          weekTotal = orders.reduce((acc, curr) => {
+            return acc + curr.total;
+          }, 0);
+
+          Order.find({
+            time: { $gt: new Date(Date.now() - 24 * 60 * 60 * 1000 * 7 * 30) },
+          })
+            .then((orders) => {
+              monthOrdersCount = orders.length;
+              monthTotal = orders.reduce((acc, curr) => {
+                return acc + curr.total;
+              }, 0);
+              res.status(200).render("admin", {
+                todayOrdersCount,
+                todayTotal,
+                weekOrdersCount,
+                weekTotal,
+                monthOrdersCount,
+                monthTotal,
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+              res.status(404).render("error");
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(404).render("error");
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).render("error");
+    });
 };
 
 exports.getAdminProducts = (req, res, next) => {
