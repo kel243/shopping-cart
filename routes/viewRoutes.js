@@ -5,7 +5,9 @@ const router = express.Router();
 const viewsController = require("../controllers/viewsController");
 const authController = require("../controllers/authController");
 
-router.get("/", authController.isLoggedIn, viewsController.getIndex);
+router.get("/", viewsController.getHome);
+
+router.get("/order", authController.isLoggedIn, viewsController.getIndex);
 
 router.get("/login", authController.alreadyLoggedIn, viewsController.getLogin);
 

@@ -18,6 +18,25 @@ const months = [
   "Dec",
 ];
 
+exports.getHome = (req, res, next) => {
+  const menu = [];
+  RegularItem.find()
+    .sort({ id: 1 })
+    .then((result) => {
+      menu[0] = result;
+      SpecialItem.find()
+        .sort({ id: 1 })
+        .then((result) => {
+          menu[1] = result;
+          res.status(200).render("home", {
+            menu: menu,
+          });
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+};
+
 exports.getIndex = (req, res, next) => {
   const menu = [];
   RegularItem.find()
