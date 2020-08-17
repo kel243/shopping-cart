@@ -33,7 +33,7 @@ html(lang='en')
             li.nav-item
                 a.nav-link.underline(href='#contact') Contact
             li.nav-item
-                a.nav-link.underline(href='/order') Order Now
+                a.nav-link.underline.gold(href='/order') Order Now
       .hero-header-container
         h1.hero-header(data-aos='fade-up', data-aos-duration='1000')
           | Szechuan Express
@@ -168,6 +168,10 @@ html(lang='en')
     section#order.order
       h2.order-header Order Now
       .order-methods
+        .order-doordash(data-aos='zoom-in', data-aos-duration='1000')
+          img.order-icon.order-icon-gh(src='/img/logo.png', alt='')
+          h3.order-method Order With Here
+          a.order-link.underline-red(href='/order', target='_blank') Click Here!
         .order-phone(data-aos='zoom-in', data-aos-duration='1000')
           img.order-icon.order-icon-phone(src='/img/phone.png', alt='')
           h3.order-method Order By Phone
